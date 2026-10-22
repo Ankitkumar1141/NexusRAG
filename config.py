@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from python_dotenv import load_dotenv
+from dotenv import load_dotenv
 load_dotenv()
 
 def _get_int(name: str, default: int) -> int:   
@@ -17,7 +17,7 @@ def _get_int(name: str, default: int) -> int:
 
 
 PROJECT_ROOT = Path(__file__).parent
-DOCUMENT_DIR = PROJECT_ROOT/"data"/"documents"
+DOCUMENTS_DIR = PROJECT_ROOT/"data"/"documents"
 EVALUATION_DIR=PROJECT_ROOT/"data"/"evaluation"
 VECTORSTORE_DIR=PROJECT_ROOT/"vectorstore"
 FAISS_DIR=PROJECT_ROOT/"vectorstore"/"faiss"
