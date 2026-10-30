@@ -8,7 +8,7 @@ from src.indexing import (
     index_summary,
     update_index,
 )
-from src.ingestion import SUPPORTED_EXTENSIONS, load_documents_from_folder
+from src.ingestion import SUPPORTED_EXTENSIONS, load_document_from_folder
 from src.memory import add_exchange, clear_memory, create_memory
 from src.rag_pipeline import answer_question, load_pipeline
 from src.reranking import reranker_status
@@ -24,8 +24,6 @@ def init_session_state() -> None:
     if "memory" not in st.session_state:
         st.session_state.memory = create_memory()
     if "messages" not in st.session_state:
-        # The pretty transcript we draw on screen. `memory` is what the LLM
-        # sees; `messages` is what the user sees (it also holds the sources).
         st.session_state.messages = []
     if "pipeline" not in st.session_state:
         st.session_state.pipeline = None
@@ -72,11 +70,9 @@ def render_sidebar() -> bool:
             config.VECTOR_DB = chosen_db
             st.session_state.pipeline = None
 
-        for name, value in config.describe_settings().items():
+        for name, value in config.check_model().items():
             st.caption(f"**{name}:** {value}")
 
-        # Shows "cross-encoder (...)" normally, or tells you the simple
-        # keyword fallback is active because PyTorch could not be loaded.
         st.caption(f"**Reranker:** {reranker_status()}")
 
         st.divider()
@@ -139,7 +135,7 @@ def render_document_management() -> None:
 def run_build() -> None:
     try:
         with st.spinner("Loading documents, chunking and embedding..."):
-            documents = load_documents_from_folder(config.DOCUMENTS_DIR)
+            documents = load_document_from_folder(config.DOCUMENTS_DIR)
             stats = build_index(documents)
 
         st.session_state.pipeline = None
@@ -154,7 +150,7 @@ def run_build() -> None:
 def run_update() -> None:
     try:
         with st.spinner("Adding new documents to the index..."):
-            documents = load_documents_from_folder(config.DOCUMENTS_DIR)
+            documents = load_document_from_folder(config.DOCUMENTS_DIR)
             stats = update_index(documents)
 
         st.session_state.pipeline = None
@@ -228,9 +224,9 @@ def main() -> None:
 
     show_debug = render_sidebar()
 
-    if not config.OPENAI_API_KEY:
+    if not config.MISTRAL_API_KEY:
         st.warning(
-            "No OpenAI API key found. Copy `.env.example` to `.env`, add your "
+            "No MistralAI API key found. Copy `.env.example` to `.env`, add your "
             "key, then restart the app."
         )
         return

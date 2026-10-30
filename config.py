@@ -47,7 +47,7 @@ CHILD_CHUNK_OVERLAP = _get_int("CHILD_CHUNK_OVERLAP", 60)
 
 
 # retrieval pipeline
-NUM_QUERY_VARIENTS = _get_int("NUM_QUERY_VARIENTS", 3) ## nultiquery
+NUM_QUERY_VARIANTS = _get_int("NUM_QUERY_VARIANTS", 3) ## multiquery
 
 VECTOR_TOP_K = _get_int("VECTOR_TOP_K", 6) ## extract top k using scemantic search
 
