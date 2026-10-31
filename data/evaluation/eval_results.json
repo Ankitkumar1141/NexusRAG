@@ -1,0 +1,184 @@
+{
+  "timestamp": "2026-10-31T08:03:16Z",
+  "summary": {
+    "mode": "end_to_end",
+    "total_test_cases": 10,
+    "retrieval_hit_rate": 1.0,
+    "context_precision_hit_rate": 1.0,
+    "mean_reciprocal_rank_mrr": 1.0,
+    "mean_key_phrase_coverage": 0.85,
+    "avg_latency_seconds": 7.553
+  },
+  "records": [
+    {
+      "id": "eval_01",
+      "question": "What are the core working hours at TechNova, and how many hours are employees expected to work?",
+      "expected_document": "technova_employee_handbook.pdf",
+      "expected_section": "Working Hours",
+      "latency_seconds": 11.192,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 1.0,
+      "sources_cited": [
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_security_policy.docx - Section: Password Policy",
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_security_policy.docx - Section: Data Encryption"
+      ]
+    },
+    {
+      "id": "eval_02",
+      "question": "Can employees work remotely from another country, and what are the rules?",
+      "expected_document": "technova_employee_handbook.pdf",
+      "expected_section": "Remote Work",
+      "latency_seconds": 6.235,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 1.0,
+      "sources_cited": [
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_security_policy.docx - Section: Password Policy",
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_security_policy.docx - Section: Data Encryption"
+      ]
+    },
+    {
+      "id": "eval_03",
+      "question": "How many days of annual leave can be carried over into the next year, and by what date must they be used?",
+      "expected_document": "technova_employee_handbook.pdf",
+      "expected_section": "Annual Leave",
+      "latency_seconds": 6.251,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 0.667,
+      "sources_cited": [
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_employee_handbook.pdf - Page 2",
+        "technova_security_policy.docx - Section: Password Policy"
+      ]
+    },
+    {
+      "id": "eval_04",
+      "question": "What is the annual learning budget per employee, and what purchases need manager approval?",
+      "expected_document": "technova_employee_handbook.pdf",
+      "expected_section": "Learning Budget",
+      "latency_seconds": 7.404,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 1.0,
+      "sources_cited": [
+        "technova_employee_handbook.pdf - Page 2",
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_product_guide.pdf - Page 2",
+        "technova_employee_handbook.pdf - Page 1"
+      ]
+    },
+    {
+      "id": "eval_05",
+      "question": "What are the available subscription pricing tiers and monthly costs for NovaCloud?",
+      "expected_document": "technova_product_guide.pdf",
+      "expected_section": "Pricing Tiers",
+      "latency_seconds": 6.149,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 1.0,
+      "sources_cited": [
+        "technova_product_guide.pdf - Page 1",
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_product_guide.pdf - Page 1",
+        "technova_product_guide.pdf - Page 2"
+      ]
+    },
+    {
+      "id": "eval_06",
+      "question": "What are the memory and execution time limits for Python transforms in NovaCloud?",
+      "expected_document": "technova_product_guide.pdf",
+      "expected_section": "Pipeline Builder",
+      "latency_seconds": 8.291,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 0.5,
+      "sources_cited": [
+        "technova_product_guide.pdf - Page 1",
+        "Ankit_Resume.pdf - Page 1",
+        "technova_product_guide.pdf - Page 2",
+        "technova_employee_handbook.pdf - Page 1"
+      ]
+    },
+    {
+      "id": "eval_07",
+      "question": "What is TechNova's password length requirement, and how often are passwords rotated?",
+      "expected_document": "technova_security_policy.docx",
+      "expected_section": "Password Policy",
+      "latency_seconds": 8.692,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 0.667,
+      "sources_cited": [
+        "technova_security_policy.docx - Section: Password Policy",
+        "technova_security_policy.docx - Section: Data Encryption",
+        "technova_employee_handbook.pdf - Page 1",
+        "technova_product_guide.pdf - Page 1"
+      ]
+    },
+    {
+      "id": "eval_08",
+      "question": "Are SMS codes permitted as a second factor for authentication at TechNova?",
+      "expected_document": "technova_security_policy.docx",
+      "expected_section": "Multi-Factor Authentication",
+      "latency_seconds": 6.153,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 0.667,
+      "sources_cited": [
+        "technova_security_policy.docx - Section: Password Policy",
+        "technova_security_policy.docx - Section: Vendor Security",
+        "technova_security_policy.docx - Section: Data Encryption",
+        "technova_product_guide.pdf - Page 1"
+      ]
+    },
+    {
+      "id": "eval_09",
+      "question": "What encryption standards are used for customer data at rest and in transit?",
+      "expected_document": "technova_security_policy.docx",
+      "expected_section": "Data Encryption",
+      "latency_seconds": 7.172,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 1.0,
+      "sources_cited": [
+        "technova_security_policy.docx - Section: Data Encryption",
+        "technova_security_policy.docx - Section: Password Policy",
+        "technova_product_guide.pdf - Page 1",
+        "technova_product_guide.pdf - Page 1"
+      ]
+    },
+    {
+      "id": "eval_10",
+      "question": "What is TechNova's policy on free catered lunches in the office?",
+      "expected_document": null,
+      "expected_section": null,
+      "latency_seconds": 7.991,
+      "retrieval_hit": true,
+      "context_hit": true,
+      "reciprocal_rank": 1.0,
+      "key_coverage": 1.0,
+      "sources_cited": [
+        "technova_employee_handbook.pdf - Page 2",
+        "technova_security_policy.docx - Section: Password Policy",
+        "technova_employee_handbook.pdf - Page 2",
+        "technova_employee_handbook.pdf - Page 1"
+      ]
+    }
+  ]
+}

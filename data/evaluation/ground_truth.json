@@ -1,0 +1,83 @@
+[
+  {
+    "id": "eval_01",
+    "question": "What are the core working hours at TechNova, and how many hours are employees expected to work?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Working Hours",
+    "expected_key_phrases": ["10:00 to 16:00", "40 hours"],
+    "ground_truth_answer": "TechNova expects employees to be available during core hours of 10:00 to 16:00 in their local time zone, working an average of 40 hours per week."
+  },
+  {
+    "id": "eval_02",
+    "question": "Can employees work remotely from another country, and what are the rules?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Remote Work",
+    "expected_key_phrases": ["30 days", "People team", "tax obligations"],
+    "ground_truth_answer": "Employees working remotely from another country for more than 30 days in a calendar year must notify the People team first due to potential tax obligations."
+  },
+  {
+    "id": "eval_03",
+    "question": "How many days of annual leave can be carried over into the next year, and by what date must they be used?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Annual Leave",
+    "expected_key_phrases": ["five", "5", "31 March"],
+    "ground_truth_answer": "Up to 5 unused annual leave days may be carried over into the next year and must be used before 31 March."
+  },
+  {
+    "id": "eval_04",
+    "question": "What is the annual learning budget per employee, and what purchases need manager approval?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Learning Budget",
+    "expected_key_phrases": ["1500 USD", "500 USD", "manager approval"],
+    "ground_truth_answer": "Each employee has an annual learning budget of 1500 USD. Purchases above 500 USD require manager approval in advance."
+  },
+  {
+    "id": "eval_05",
+    "question": "What are the available subscription pricing tiers and monthly costs for NovaCloud?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pricing Tiers",
+    "expected_key_phrases": ["Starter", "99 USD", "Growth", "499 USD", "Enterprise"],
+    "ground_truth_answer": "NovaCloud has three tiers: Starter costs 99 USD/month (3 pipelines), Growth costs 499 USD/month (25 pipelines), and Enterprise is custom priced per contract."
+  },
+  {
+    "id": "eval_06",
+    "question": "What are the memory and execution time limits for Python transforms in NovaCloud?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pipeline Builder",
+    "expected_key_phrases": ["10 minute", "4 GB"],
+    "ground_truth_answer": "Python transforms run in an isolated sandbox with a 10 minute execution limit and 4 GB of memory."
+  },
+  {
+    "id": "eval_07",
+    "question": "What is TechNova's password length requirement, and how often are passwords rotated?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": ["14 characters", "1Password", "not rotated"],
+    "ground_truth_answer": "Passwords must be at least 14 characters long and stored in 1Password. Passwords are not rotated on a fixed schedule (following NIST guidance) unless compromised."
+  },
+  {
+    "id": "eval_08",
+    "question": "Are SMS codes permitted as a second factor for authentication at TechNova?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Multi-Factor Authentication",
+    "expected_key_phrases": ["SMS", "not accepted", "SIM swapping"],
+    "ground_truth_answer": "SMS codes are not accepted as a second factor due to the risk of SIM swapping attacks. Hardware security keys or authenticator apps are required."
+  },
+  {
+    "id": "eval_09",
+    "question": "What encryption standards are used for customer data at rest and in transit?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": ["TLS 1.2", "AES-256"],
+    "ground_truth_answer": "Customer data is encrypted in transit with TLS 1.2 or higher, and at rest with AES-256."
+  },
+  {
+    "id": "eval_10",
+    "question": "What is TechNova's policy on free catered lunches in the office?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": ["not", "could not find", "does not contain"],
+    "ground_truth_answer": "The documents do not contain information regarding free catered lunches."
+  }
+]
+
