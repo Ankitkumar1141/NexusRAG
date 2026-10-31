@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+nexus_venv/
+env/
+venv/
+.env
+.git
+.gitignore
+.vscode
+.idea
+*.log
+data/evaluation/eval_results.json
+
