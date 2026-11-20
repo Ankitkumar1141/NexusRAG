@@ -2,12 +2,13 @@
 Advanced techniques implemented are:
 
 1. Multi-Query Retrieval - the LLM rewrites the question a few different ways.
-2. Hybrid Retrieval      - we run both meaning-based and keyword-based search.
+2. Hybrid Retrieval      - concurrent meaning-based (vector) and keyword-based (BM25) search.
 3. Parent-Child Recovery - we swap each matched small chunk for its big parent.
 """
 
 import logging
-from typing import Dict, List
+from concurrent.futures import ThreadPoolExecutor
+from typing import Dict, List, Tuple
 
 from langchain_community.retrievers import BM25Retriever
 from langchain_core.documents import Document
@@ -19,6 +20,9 @@ import config
 from llm_client import get_chat_model
 
 logger = logging.getLogger(__name__)
+
+# In-memory query-level vector search cache to prevent duplicate Gemini embedding calls
+_vector_cache: Dict[Tuple[str, int], List[Document]] = {}
 
 
 # ---------------------------------------------------------------------------
@@ -46,7 +50,10 @@ MULTI_QUERY_PROMPT = ChatPromptTemplate.from_messages(
 
 
 def generate_query_variants(question: str, history: str = "") -> List[str]:
-    
+    # For very short queries, multi-query is unnecessary and consumes quota
+    if len(question.strip().split()) <= 2:
+        return [question]
+
     queries = [question]
 
     try:
@@ -60,13 +67,14 @@ def generate_query_variants(question: str, history: str = "") -> List[str]:
         )
         for line in response.split("\n"):
             cleaned = line.strip(" -*0123456789.").strip()
-            if cleaned and cleaned.lower() != question.lower():
+            if cleaned and cleaned.lower() not in [q.lower() for q in queries]:
                 queries.append(cleaned)
     except Exception as error:
         # If the rewrite call fails we still have the original question, so
         # the user gets an answer instead of an error screen.
         logger.warning("Multi-query generation failed (%s). Using original query.", error)
 
+    # Cap to avoid rate limit spikes
     return queries[: config.NUM_QUERY_VARIANTS + 1]
 
 
@@ -81,8 +89,15 @@ def build_keyword_retriever(children: List[Document]) -> BM25Retriever:
 
 
 def search_vector_store(store: VectorStore, query: str, k: int) -> List[Document]:
+    cache_key = (query.strip().lower(), k)
+    if cache_key in _vector_cache:
+        return _vector_cache[cache_key]
+
     try:
-        return store.similarity_search(query, k=k)
+        results = store.similarity_search(query, k=k)
+        if len(_vector_cache) < 256:
+            _vector_cache[cache_key] = results
+        return results
     except Exception as error:
         logger.warning("Vector search failed for '%s': %s", query, error)
         return []
@@ -114,12 +129,45 @@ def fuse_results(ranked_lists: List[List[Document]], top_k: int) -> List[Documen
     return [documents[chunk_id] for chunk_id in best_ids]
 
 
-def hybrid_retrieve(queries: List[str],store: VectorStore,keyword_retriever: BM25Retriever,) -> List[Document]:
+def hybrid_retrieve(queries: List[str], store: VectorStore, keyword_retriever: BM25Retriever) -> List[Document]:
+    """Execute vector and BM25 searches across all query variants concurrently in parallel."""
     ranked_lists: List[List[Document]] = []
 
-    for query in queries:
-        ranked_lists.append(search_vector_store(store, query, config.VECTOR_TOP_K))
-        ranked_lists.append(search_keywords(keyword_retriever, query))
+    if not queries:
+        return []
+
+    # Deduplicate queries to avoid redundant embedding calls
+    seen = set()
+    unique_queries = []
+    for q in queries:
+        normalized = q.strip().lower()
+        if normalized and normalized not in seen:
+            seen.add(normalized)
+            unique_queries.append(q)
+
+    # Parallelize I/O-bound vector embedding lookups and in-memory BM25 matching
+    max_workers = min(len(unique_queries) * 2, 8)
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        vector_futures = [
+            executor.submit(search_vector_store, store, q, config.VECTOR_TOP_K)
+            for q in unique_queries
+        ]
+        keyword_futures = [
+            executor.submit(search_keywords, keyword_retriever, q)
+            for q in unique_queries
+        ]
+
+        for future in vector_futures:
+            try:
+                ranked_lists.append(future.result())
+            except Exception as e:
+                logger.warning("Error collecting parallel vector search: %s", e)
+
+        for future in keyword_futures:
+            try:
+                ranked_lists.append(future.result())
+            except Exception as e:
+                logger.warning("Error collecting parallel keyword search: %s", e)
 
     return fuse_results(ranked_lists, config.HYBRID_TOP_K)
 
@@ -128,7 +176,7 @@ def hybrid_retrieve(queries: List[str],store: VectorStore,keyword_retriever: BM2
 # 3. Parent-Child Recovery
 # ---------------------------------------------------------------------------
 
-def recover_parents(children: List[Document],parent_lookup: Dict[str, Document],) -> List[Document]:
+def recover_parents(children: List[Document], parent_lookup: Dict[str, Document]) -> List[Document]:
     parents: List[Document] = []
     seen_parent_ids = set()
 

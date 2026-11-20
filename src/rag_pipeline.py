@@ -1,6 +1,6 @@
-
 import logging
-from typing import Dict, List
+import re
+from typing import Dict, List, Optional
 
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.documents import Document
@@ -8,6 +8,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 from llm_client import get_chat_model
+from src.cache import get as cache_get, put as cache_put
 from src.chunking import build_parent_lookup
 from src.indexing import load_doc_store, load_vector_store
 from src.memory import format_history, get_recent_messages
@@ -17,13 +18,34 @@ from src.retrieval import (build_keyword_retriever, generate_query_variants, hyb
 
 logger = logging.getLogger(__name__)
 
+# Fast-path conversational greetings that shouldn't waste vector retrieval quota
+GREETING_PATTERNS = {
+    "hi", "hello", "hey", "hola", "greetings", "good morning",
+    "good afternoon", "good evening", "howdy", "sup", "yo"
+}
+THANK_PATTERNS = {"thanks", "thank you", "thx", "appreciate it", "great thanks"}
+
+
+def detect_conversational_intent(text: str) -> Optional[str]:
+    """Check if query is a simple greeting or pleasantry to bypass heavy document search."""
+    cleaned = re.sub(r"[^\w\s]", "", text.strip().lower())
+    if cleaned in GREETING_PATTERNS:
+        return (
+            "Hello! I am your NexusRAG assistant. I have indexed your company documents "
+            "and research papers (including the Compliance Copilot paper, policies, and handbooks). "
+            "How can I help you today?"
+        )
+    if cleaned in THANK_PATTERNS:
+        return "You're very welcome! Let me know if you need any other details from the documents."
+    return None
+
 
 ANSWER_PROMPT = ChatPromptTemplate.from_messages(
     [
         (
             "system",
             "You are a helpful assistant answering questions about internal "
-            "company documents.\n\n"
+            "company documents and research papers.\n\n"
             "Rules:\n"
             "- Answer ONLY using the context below.\n"
             "- If the context does not contain the answer, say so plainly "
@@ -52,11 +74,34 @@ def load_pipeline() -> Dict[str, object]:
     }
 
 
-def answer_question(question: str,pipeline: Dict[str, object],memory: InMemoryChatMessageHistory,) -> Dict[str, object]:
+def answer_question(question: str, pipeline: Dict[str, object], memory: InMemoryChatMessageHistory) -> Dict[str, object]:
     if not question or not question.strip():
         raise ValueError("Please type a question first.")
 
-    
+    # --- Fast Path 1: Conversational Greetings (Zero Latency) ---
+    greeting_answer = detect_conversational_intent(question)
+    if greeting_answer:
+        return {
+            "answer": greeting_answer,
+            "sources": [],
+            "debug": {
+                "cache_hit": False,
+                "is_greeting": True,
+                "original_query": question,
+                "generated_queries": [question],
+                "retrieved": [],
+                "reranked": [],
+                "final_context": [],
+            },
+        }
+
+    # --- Fast Path 2: Cache Lookup (<50ms) ---
+    cached = cache_get(question)
+    if cached is not None:
+        cached["debug"]["cache_hit"] = True
+        return cached
+
+    # --- Full Retrieval & Generation Pipeline ---
     history_text = format_history(memory)
     queries = generate_query_variants(question, history_text)
 
@@ -71,6 +116,7 @@ def answer_question(question: str,pipeline: Dict[str, object],memory: InMemoryCh
             "answer": "I could not find anything related to that in the indexed documents.",
             "sources": [],
             "debug": {
+                "cache_hit": False,
                 "original_query": question,
                 "generated_queries": queries,
                 "retrieved": [],
@@ -85,10 +131,11 @@ def answer_question(question: str,pipeline: Dict[str, object],memory: InMemoryCh
     answer = generate_answer(question, context_text, memory)
     sources = [describe_source(document) for document in selected]
 
-    return {
+    result = {
         "answer": answer,
         "sources": sources,
         "debug": {
+            "cache_hit": False,
             "original_query": question,
             "generated_queries": queries,
             "retrieved": summarise_documents(candidate_children),
@@ -97,8 +144,12 @@ def answer_question(question: str,pipeline: Dict[str, object],memory: InMemoryCh
         },
     }
 
+    # Store in cache for future identical queries
+    cache_put(question, result)
+    return result
 
-def generate_answer(question: str,context_text: str,memory: InMemoryChatMessageHistory,) -> str:
+
+def generate_answer(question: str, context_text: str, memory: InMemoryChatMessageHistory) -> str:
     chain = ANSWER_PROMPT | get_chat_model() | StrOutputParser()
 
     try:
@@ -112,7 +163,7 @@ def generate_answer(question: str,context_text: str,memory: InMemoryChatMessageH
     except Exception as error:
         logger.error("Answer generation failed: %s", error)
         return (
-            "Sorry, the OpenAI request failed. Check your API key, your "
+            "Sorry, the LLM request failed. Check your API key, your "
             f"internet connection and your usage limits.\n\nDetails: {error}"
         )
 
