@@ -1,0 +1,1196 @@
+[
+  {
+    "id": "eval_001",
+    "question": "What are the core working hours at TechNova?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Working Hours",
+    "expected_key_phrases": [
+      "10:00 to 16:00",
+      "core hours"
+    ],
+    "ground_truth_answer": "Core hours are 10:00 to 16:00 in the employee's local time zone."
+  },
+  {
+    "id": "eval_002",
+    "question": "How many hours per week are employees expected to work on average?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Working Hours",
+    "expected_key_phrases": [
+      "40 hours"
+    ],
+    "ground_truth_answer": "Employees are expected to work an average of 40 hours per week."
+  },
+  {
+    "id": "eval_003",
+    "question": "What is the policy for meetings held outside core hours?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Working Hours",
+    "expected_key_phrases": [
+      "recorded"
+    ],
+    "ground_truth_answer": "Meetings outside core hours should be recorded so remote colleagues can catch up."
+  },
+  {
+    "id": "eval_004",
+    "question": "How many days per week are employees allowed to work remotely?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Remote Work",
+    "expected_key_phrases": [
+      "four days",
+      "4 days"
+    ],
+    "ground_truth_answer": "Employees may work remotely up to four days per week."
+  },
+  {
+    "id": "eval_005",
+    "question": "What must an employee do if working from another country for over 30 days?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Remote Work",
+    "expected_key_phrases": [
+      "30 days",
+      "People team",
+      "tax obligations"
+    ],
+    "ground_truth_answer": "Notify the People team first due to potential tax obligations for both parties."
+  },
+  {
+    "id": "eval_006",
+    "question": "How many days of paid annual leave do full-time employees accrue per year?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Annual Leave",
+    "expected_key_phrases": [
+      "24 days",
+      "two days per month"
+    ],
+    "ground_truth_answer": "Full-time employees receive 24 days of paid annual leave accrued at 2 days per month."
+  },
+  {
+    "id": "eval_007",
+    "question": "How many unused annual leave days can be carried over into the next year?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Annual Leave",
+    "expected_key_phrases": [
+      "five",
+      "5",
+      "31 March"
+    ],
+    "ground_truth_answer": "Up to five unused leave days may be carried over and must be used before 31 March."
+  },
+  {
+    "id": "eval_008",
+    "question": "Within how many days are annual leave requests normally approved?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Annual Leave",
+    "expected_key_phrases": [
+      "three working days"
+    ],
+    "ground_truth_answer": "Leave requests are submitted in the People portal and approved within three working days."
+  },
+  {
+    "id": "eval_009",
+    "question": "How many paid sick leave days are provided each year?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Sick Leave",
+    "expected_key_phrases": [
+      "10 days"
+    ],
+    "ground_truth_answer": "Employees receive up to 10 days of paid sick leave per year."
+  },
+  {
+    "id": "eval_010",
+    "question": "When is a medical certificate required for sick leave?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Sick Leave",
+    "expected_key_phrases": [
+      "three consecutive",
+      "3 consecutive"
+    ],
+    "ground_truth_answer": "A medical certificate is required for absences longer than three consecutive working days."
+  },
+  {
+    "id": "eval_011",
+    "question": "Do mental health days count as sick leave?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Sick Leave",
+    "expected_key_phrases": [
+      "mental health",
+      "count as sick leave"
+    ],
+    "ground_truth_answer": "Yes, mental health days count as sick leave and reasons do not need to be explained."
+  },
+  {
+    "id": "eval_012",
+    "question": "What is the paid parental leave duration for primary and secondary caregivers?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Parental Leave",
+    "expected_key_phrases": [
+      "16 weeks",
+      "6 weeks"
+    ],
+    "ground_truth_answer": "16 weeks fully paid for primary caregivers and 6 weeks for secondary caregivers."
+  },
+  {
+    "id": "eval_013",
+    "question": "Can parental leave be taken in separate blocks?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Parental Leave",
+    "expected_key_phrases": [
+      "three separate blocks",
+      "18 months"
+    ],
+    "ground_truth_answer": "Parental leave can be taken in up to three separate blocks during the first 18 months."
+  },
+  {
+    "id": "eval_014",
+    "question": "What part-time arrangement is offered to employees returning from parental leave?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Parental Leave",
+    "expected_key_phrases": [
+      "four-day week",
+      "80 percent",
+      "three months"
+    ],
+    "ground_truth_answer": "Returning employees may work a reduced four-day week at 80% pay for the first 3 months."
+  },
+  {
+    "id": "eval_015",
+    "question": "What is the annual learning budget provided to each employee?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Learning Budget",
+    "expected_key_phrases": [
+      "1500 USD"
+    ],
+    "ground_truth_answer": "Each employee has an annual learning budget of 1500 USD."
+  },
+  {
+    "id": "eval_016",
+    "question": "Does the annual learning budget carry over to the next year?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Learning Budget",
+    "expected_key_phrases": [
+      "does not carry over"
+    ],
+    "ground_truth_answer": "No, the learning budget does not carry over to the following year."
+  },
+  {
+    "id": "eval_017",
+    "question": "What purchase threshold requires manager pre-approval for the learning budget?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Learning Budget",
+    "expected_key_phrases": [
+      "500 USD",
+      "manager approval"
+    ],
+    "ground_truth_answer": "Purchases above 500 USD need manager approval in advance."
+  },
+  {
+    "id": "eval_018",
+    "question": "By what day of the month must expense reimbursement claims be submitted?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Expense Reimbursement",
+    "expected_key_phrases": [
+      "25th"
+    ],
+    "ground_truth_answer": "Claims must be submitted before the 25th of the month to be paid with that month's payroll."
+  },
+  {
+    "id": "eval_019",
+    "question": "What flight duration qualifies for business class travel?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Expense Reimbursement",
+    "expected_key_phrases": [
+      "six hours",
+      "director approval"
+    ],
+    "ground_truth_answer": "Flights over six hours may be booked in business class with director approval."
+  },
+  {
+    "id": "eval_020",
+    "question": "What computer options do engineers receive upon joining TechNova?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Equipment Policy",
+    "expected_key_phrases": [
+      "MacBook Pro",
+      "Dell XPS",
+      "Ubuntu"
+    ],
+    "ground_truth_answer": "Engineers may choose between a MacBook Pro and a Dell XPS running Ubuntu."
+  },
+  {
+    "id": "eval_021",
+    "question": "What is the hardware refresh cycle for company laptops?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Equipment Policy",
+    "expected_key_phrases": [
+      "three years"
+    ],
+    "ground_truth_answer": "Laptops are refreshed every three years."
+  },
+  {
+    "id": "eval_022",
+    "question": "What is the home office allowance amount for new hires?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Equipment Policy",
+    "expected_key_phrases": [
+      "600 USD"
+    ],
+    "ground_truth_answer": "Employees receive a one-time home office allowance of 600 USD for a desk and chair."
+  },
+  {
+    "id": "eval_023",
+    "question": "When do performance review cycles occur at TechNova?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Performance Reviews",
+    "expected_key_phrases": [
+      "March and September"
+    ],
+    "ground_truth_answer": "Performance reviews happen twice a year, in March and September."
+  },
+  {
+    "id": "eval_024",
+    "question": "When do compensation changes and promotions take effect?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Performance Reviews",
+    "expected_key_phrases": [
+      "1 May",
+      "March"
+    ],
+    "ground_truth_answer": "Decisions are made in the March cycle and take effect on 1 May."
+  },
+  {
+    "id": "eval_025",
+    "question": "Within how many days are Code of Conduct reports investigated?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Code of Conduct",
+    "expected_key_phrases": [
+      "10 working days"
+    ],
+    "ground_truth_answer": "All reports are investigated within 10 working days."
+  },
+  {
+    "id": "eval_026",
+    "question": "What is NovaCloud and what is its primary use case?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "NovaCloud Overview",
+    "expected_key_phrases": [
+      "data pipeline",
+      "databases",
+      "storage"
+    ],
+    "ground_truth_answer": "NovaCloud is a platform to build, schedule, and monitor pipelines moving data without managing servers."
+  },
+  {
+    "id": "eval_027",
+    "question": "What are the three main components of NovaCloud?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "NovaCloud Overview",
+    "expected_key_phrases": [
+      "Pipeline Builder",
+      "Scheduler",
+      "Observability Hub"
+    ],
+    "ground_truth_answer": "The platform has three parts: Pipeline Builder, Scheduler, and Observability Hub."
+  },
+  {
+    "id": "eval_028",
+    "question": "What is the current release of NovaCloud and when did it ship?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "NovaCloud Overview",
+    "expected_key_phrases": [
+      "4.2",
+      "February 2024"
+    ],
+    "ground_truth_answer": "The current release is NovaCloud 4.2, shipped in February 2024."
+  },
+  {
+    "id": "eval_029",
+    "question": "In what languages can transforms be written in the Pipeline Builder?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pipeline Builder",
+    "expected_key_phrases": [
+      "SQL",
+      "Python"
+    ],
+    "ground_truth_answer": "Transforms in the Pipeline Builder are written in SQL or Python."
+  },
+  {
+    "id": "eval_030",
+    "question": "What execution time and memory limits apply to Python transforms?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pipeline Builder",
+    "expected_key_phrases": [
+      "10 minute",
+      "4 GB"
+    ],
+    "ground_truth_answer": "Python transforms run in an isolated sandbox with a 10 minute execution limit and 4 GB of memory."
+  },
+  {
+    "id": "eval_031",
+    "question": "How can pipelines be exported from the visual builder?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pipeline Builder",
+    "expected_key_phrases": [
+      "YAML",
+      "Git"
+    ],
+    "ground_truth_answer": "Every pipeline can be exported as a YAML file and stored in Git."
+  },
+  {
+    "id": "eval_032",
+    "question": "What retry policy does the Scheduler use for failed pipeline runs?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Scheduler",
+    "expected_key_phrases": [
+      "three times",
+      "exponential backoff"
+    ],
+    "ground_truth_answer": "Failed runs are retried three times with exponential backoff before being marked failed."
+  },
+  {
+    "id": "eval_033",
+    "question": "How long are pipeline metrics retained in the Observability Hub?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Observability Hub",
+    "expected_key_phrases": [
+      "13 months"
+    ],
+    "ground_truth_answer": "Metrics are retained for 13 months on all paid plans."
+  },
+  {
+    "id": "eval_034",
+    "question": "What data quality checks are available in the Observability Hub?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Observability Hub",
+    "expected_key_phrases": [
+      "null checks",
+      "uniqueness",
+      "range",
+      "freshness"
+    ],
+    "ground_truth_answer": "Checks include null checks, uniqueness checks, range checks, and freshness checks."
+  },
+  {
+    "id": "eval_035",
+    "question": "How many pre-built connectors ship with NovaCloud 4.2?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Connectors",
+    "expected_key_phrases": [
+      "68 connectors"
+    ],
+    "ground_truth_answer": "NovaCloud 4.2 ships with 68 pre-built connectors."
+  },
+  {
+    "id": "eval_036",
+    "question": "Can customers build private custom connectors for NovaCloud?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Connectors",
+    "expected_key_phrases": [
+      "Connector SDK",
+      "private connector"
+    ],
+    "ground_truth_answer": "Yes, customers can build private connectors using the Connector SDK visible only in their workspace."
+  },
+  {
+    "id": "eval_037",
+    "question": "What is the monthly price and pipeline allowance of the Starter tier?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pricing Tiers",
+    "expected_key_phrases": [
+      "99 USD",
+      "3 pipelines",
+      "10 GB"
+    ],
+    "ground_truth_answer": "Starter costs 99 USD per month and includes 3 pipelines, 1 workspace, and 10 GB transfer."
+  },
+  {
+    "id": "eval_038",
+    "question": "What is included in the Growth subscription tier?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pricing Tiers",
+    "expected_key_phrases": [
+      "499 USD",
+      "25 pipelines",
+      "250 GB"
+    ],
+    "ground_truth_answer": "Growth costs 499 USD per month and includes 25 pipelines, 3 workspaces, and 250 GB data transfer."
+  },
+  {
+    "id": "eval_039",
+    "question": "What is the overage rate for data transfer above the tier allowance?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pricing Tiers",
+    "expected_key_phrases": [
+      "0.09 USD per GB"
+    ],
+    "ground_truth_answer": "Data transfer above the included allowance is billed at 0.09 USD per GB."
+  },
+  {
+    "id": "eval_040",
+    "question": "What is the maximum number of steps allowed in a single pipeline?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Platform Limits",
+    "expected_key_phrases": [
+      "150 steps"
+    ],
+    "ground_truth_answer": "A single pipeline may contain up to 150 steps."
+  },
+  {
+    "id": "eval_041",
+    "question": "What is the maximum file size that can be processed in a single step?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Platform Limits",
+    "expected_key_phrases": [
+      "5 GB"
+    ],
+    "ground_truth_answer": "The maximum size of one file processed in a single step is 5 GB."
+  },
+  {
+    "id": "eval_042",
+    "question": "What is the NovaCloud REST API rate limit per workspace?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Platform Limits",
+    "expected_key_phrases": [
+      "600 requests per minute"
+    ],
+    "ground_truth_answer": "The REST API is rate limited to 600 requests per minute per workspace."
+  },
+  {
+    "id": "eval_043",
+    "question": "What notification channels are supported for pipeline alerts?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Integrations and Alerting",
+    "expected_key_phrases": [
+      "email",
+      "Slack",
+      "Teams",
+      "PagerDuty",
+      "webhook"
+    ],
+    "ground_truth_answer": "Alerts support email, Slack, Microsoft Teams, PagerDuty, and HTTPS webhooks."
+  },
+  {
+    "id": "eval_044",
+    "question": "Does NovaCloud expose Prometheus metrics?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Integrations and Alerting",
+    "expected_key_phrases": [
+      "Prometheus"
+    ],
+    "ground_truth_answer": "Yes, NovaCloud exposes a Prometheus-compatible metrics endpoint for customer monitoring."
+  },
+  {
+    "id": "eval_045",
+    "question": "How long is the free trial period and what tier does it include?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Getting Started",
+    "expected_key_phrases": [
+      "14 days",
+      "Growth tier"
+    ],
+    "ground_truth_answer": "Free trials last 14 days and include all Growth tier features with no credit card required."
+  },
+  {
+    "id": "eval_046",
+    "question": "When is NovaCloud REST API version v1 scheduled for sunset?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Deprecation and Versioning",
+    "expected_key_phrases": [
+      "31 December 2024",
+      "v1"
+    ],
+    "ground_truth_answer": "Version v1 is deprecated and will be switched off on 31 December 2024."
+  },
+  {
+    "id": "eval_047",
+    "question": "How much advance notice does TechNova provide before removing an API version?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Deprecation and Versioning",
+    "expected_key_phrases": [
+      "12 months notice"
+    ],
+    "ground_truth_answer": "TechNova gives at least 12 months notice before removing an API version."
+  },
+  {
+    "id": "eval_048",
+    "question": "Who approves the Information Security Policy and how often is it reviewed?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Purpose and Scope",
+    "expected_key_phrases": [
+      "CTO",
+      "12 months"
+    ],
+    "ground_truth_answer": "It is reviewed every 12 months by the Security team and approved by the CTO."
+  },
+  {
+    "id": "eval_049",
+    "question": "What is TechNova's minimum password length?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": [
+      "14 characters"
+    ],
+    "ground_truth_answer": "Passwords must be at least 14 characters long."
+  },
+  {
+    "id": "eval_050",
+    "question": "What password manager is mandatory for employees?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": [
+      "1Password"
+    ],
+    "ground_truth_answer": "All employees must store work passwords in the company password manager, 1Password."
+  },
+  {
+    "id": "eval_051",
+    "question": "Are passwords rotated on a routine schedule?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": [
+      "not rotated",
+      "NIST"
+    ],
+    "ground_truth_answer": "No, following NIST guidance, password changes are only forced upon evidence of compromise."
+  },
+  {
+    "id": "eval_052",
+    "question": "Can employees share their work passwords with colleagues?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": [
+      "never permitted",
+      "not permitted"
+    ],
+    "ground_truth_answer": "Sharing passwords with anyone, including colleagues, is strictly prohibited."
+  },
+  {
+    "id": "eval_053",
+    "question": "Are SMS codes accepted as a multi-factor authentication method?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Multi-Factor Authentication",
+    "expected_key_phrases": [
+      "SMS",
+      "not accepted",
+      "SIM swapping"
+    ],
+    "ground_truth_answer": "SMS codes are not accepted due to the risk of SIM swapping attacks."
+  },
+  {
+    "id": "eval_054",
+    "question": "What MFA methods are required for production systems?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Multi-Factor Authentication",
+    "expected_key_phrases": [
+      "hardware security keys",
+      "authenticator app"
+    ],
+    "ground_truth_answer": "Hardware security keys or an authenticator app must be used."
+  },
+  {
+    "id": "eval_055",
+    "question": "What default access level do engineers receive to production systems?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Access Control",
+    "expected_key_phrases": [
+      "read-only",
+      "least privilege"
+    ],
+    "ground_truth_answer": "Engineers receive read-only access by default under the principle of least privilege."
+  },
+  {
+    "id": "eval_056",
+    "question": "For how long is just-in-time write access granted to production?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Access Control",
+    "expected_key_phrases": [
+      "eight hours",
+      "8 hours"
+    ],
+    "ground_truth_answer": "Write access to production is granted for a maximum of eight hours via the JIT tool."
+  },
+  {
+    "id": "eval_057",
+    "question": "Within how many hours must departed employee accounts be disabled?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Access Control",
+    "expected_key_phrases": [
+      "two hours",
+      "2 hours"
+    ],
+    "ground_truth_answer": "Accounts of employees who leave are disabled within two hours of their final working day."
+  },
+  {
+    "id": "eval_058",
+    "question": "What encryption standard protects customer data in transit?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": [
+      "TLS 1.2"
+    ],
+    "ground_truth_answer": "Customer data is encrypted in transit using TLS 1.2 or higher."
+  },
+  {
+    "id": "eval_059",
+    "question": "What encryption algorithm is used for customer data at rest?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": [
+      "AES-256"
+    ],
+    "ground_truth_answer": "Customer data is encrypted at rest with AES-256."
+  },
+  {
+    "id": "eval_060",
+    "question": "How frequently are customer encryption keys rotated?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": [
+      "rotated annually"
+    ],
+    "ground_truth_answer": "Encryption keys are managed in KMS and rotated annually."
+  },
+  {
+    "id": "eval_061",
+    "question": "Is customer data ever permitted to be copied to personal laptops?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": [
+      "never copied"
+    ],
+    "ground_truth_answer": "Customer data is never copied to a laptop or personal device."
+  },
+  {
+    "id": "eval_062",
+    "question": "After how many minutes of inactivity must company laptop screens lock?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Device Security",
+    "expected_key_phrases": [
+      "five minutes",
+      "5 minutes"
+    ],
+    "ground_truth_answer": "Automatic screen lock activates after five minutes of inactivity."
+  },
+  {
+    "id": "eval_063",
+    "question": "Within how many days must operating system security patches be installed?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Device Security",
+    "expected_key_phrases": [
+      "14 days"
+    ],
+    "ground_truth_answer": "Employees must install OS security updates within 14 days of release."
+  },
+  {
+    "id": "eval_064",
+    "question": "Within what timeframe must a suspected security incident be reported?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Incident Response",
+    "expected_key_phrases": [
+      "one hour",
+      "1 hour"
+    ],
+    "ground_truth_answer": "Anyone suspecting a security incident must report it within one hour."
+  },
+  {
+    "id": "eval_065",
+    "question": "Under GDPR, what is the notification window for confirmed personal data breaches?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Incident Response",
+    "expected_key_phrases": [
+      "72 hours",
+      "GDPR"
+    ],
+    "ground_truth_answer": "Affected customers and supervisory authorities must be notified within 72 hours."
+  },
+  {
+    "id": "eval_066",
+    "question": "What security compliance certifications does TechNova maintain?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Compliance and Certification",
+    "expected_key_phrases": [
+      "SOC 2 Type II",
+      "ISO 27001"
+    ],
+    "ground_truth_answer": "TechNova maintains an annual SOC 2 Type II report and is ISO 27001 certified."
+  },
+  {
+    "id": "eval_067",
+    "question": "How frequently are third-party penetration tests carried out?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Compliance and Certification",
+    "expected_key_phrases": [
+      "twice a year"
+    ],
+    "ground_truth_answer": "Penetration tests are conducted by an external firm twice a year."
+  },
+  {
+    "id": "eval_068",
+    "question": "How often is security awareness training required for all employees?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Security Training",
+    "expected_key_phrases": [
+      "12 months",
+      "onboarding"
+    ],
+    "ground_truth_answer": "Training is completed during onboarding and refreshed every 12 months."
+  },
+  {
+    "id": "eval_069",
+    "question": "Does TechNova offer catered lunch or free meals in the Dublin office?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "does not contain",
+      "no information"
+    ],
+    "ground_truth_answer": "The documentation does not contain information regarding catered lunch."
+  },
+  {
+    "id": "eval_070",
+    "question": "What is the 401(k) company matching percentage for US employees?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "does not mention",
+      "no information"
+    ],
+    "ground_truth_answer": "The documents do not mention 401(k) matching percentages."
+  },
+  {
+    "id": "eval_071",
+    "question": "Are employees allowed to bring dogs or pets into the Austin headquarters?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "no information"
+    ],
+    "ground_truth_answer": "There is no pet policy documented in the provided files."
+  },
+  {
+    "id": "eval_072",
+    "question": "Does TechNova provide company cars or vehicle stipends for sales staff?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "does not mention"
+    ],
+    "ground_truth_answer": "No company vehicle policy is mentioned in the company documents."
+  },
+  {
+    "id": "eval_073",
+    "question": "What is the stock vesting schedule for newly granted employee ISO options?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "no information"
+    ],
+    "ground_truth_answer": "Equity and stock option vesting schedules are not documented in the indexed files."
+  },
+  {
+    "id": "eval_074",
+    "question": "Is there an on-site gym or wellness center at the Singapore office?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "does not contain"
+    ],
+    "ground_truth_answer": "The documentation does not cover on-site gym facilities."
+  },
+  {
+    "id": "eval_075",
+    "question": "What is the relocation reimbursement package for international transfers?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "does not mention"
+    ],
+    "ground_truth_answer": "Relocation packages are not detailed in the provided documents."
+  },
+  {
+    "id": "eval_076",
+    "question": "Does TechNova provide childcare subsidies or on-site day care?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "no information"
+    ],
+    "ground_truth_answer": "Childcare subsidies are not covered in the employee handbook."
+  },
+  {
+    "id": "eval_077",
+    "question": "Can you explain the daily schedule, core hours, and weekly expected hours?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Working Hours",
+    "expected_key_phrases": [
+      "10:00 to 16:00",
+      "40 hours"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_078",
+    "question": "I want to work remotely from Spain for 2 months, is that allowed?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Remote Work",
+    "expected_key_phrases": [
+      "30 days",
+      "People team",
+      "tax"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_079",
+    "question": "Do my leftover vacation days expire at the end of December?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Annual Leave",
+    "expected_key_phrases": [
+      "31 March",
+      "5",
+      "five"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_080",
+    "question": "At what point do I have to provide a doctor's certificate for illness?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Sick Leave",
+    "expected_key_phrases": [
+      "three consecutive",
+      "3"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_081",
+    "question": "Can a father split his paternity leave into multiple periods?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Parental Leave",
+    "expected_key_phrases": [
+      "three separate blocks",
+      "6 weeks"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_082",
+    "question": "Can I use my education stipend for a $700 conference ticket?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Learning Budget",
+    "expected_key_phrases": [
+      "1500 USD",
+      "manager approval",
+      "500 USD"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_083",
+    "question": "Am I allowed to fly business class for an 8-hour transatlantic flight?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Expense Reimbursement",
+    "expected_key_phrases": [
+      "six hours",
+      "director approval"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_084",
+    "question": "Can software engineers request a Linux OS laptop?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Equipment Policy",
+    "expected_key_phrases": [
+      "Ubuntu",
+      "Dell XPS"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_085",
+    "question": "How much money do remote workers get for setting up a home desk?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Equipment Policy",
+    "expected_key_phrases": [
+      "600 USD"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_086",
+    "question": "When during the year do compensation reviews and promotions occur?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Performance Reviews",
+    "expected_key_phrases": [
+      "March",
+      "1 May"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_087",
+    "question": "What happens if someone retaliates after an ethics hotline report?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Code of Conduct",
+    "expected_key_phrases": [
+      "serious breach",
+      "retaliation"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_088",
+    "question": "What happens if my Python transform runs for 15 minutes?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pipeline Builder",
+    "expected_key_phrases": [
+      "10 minute"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_089",
+    "question": "If a pipeline fails due to a network glitch, how many times will it retry?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Scheduler",
+    "expected_key_phrases": [
+      "three times",
+      "backoff"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_090",
+    "question": "Can I see pipeline throughput metrics from 10 months ago?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Observability Hub",
+    "expected_key_phrases": [
+      "13 months"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_091",
+    "question": "Does NovaCloud support connectors to Snowflake and Google BigQuery?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Connectors",
+    "expected_key_phrases": [
+      "68 connectors",
+      "Snowflake",
+      "BigQuery"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_092",
+    "question": "Compare the price and pipeline limits between Starter and Growth plans.",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pricing Tiers",
+    "expected_key_phrases": [
+      "99 USD",
+      "499 USD",
+      "3 pipelines",
+      "25 pipelines"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_093",
+    "question": "What fee is charged if a company exceeds its monthly gigabyte limit?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Pricing Tiers",
+    "expected_key_phrases": [
+      "0.09 USD per GB"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_094",
+    "question": "What is the heaviest single file that can pass through a pipeline step?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Platform Limits",
+    "expected_key_phrases": [
+      "5 GB"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_095",
+    "question": "Can NovaCloud send incident alerts to Microsoft Teams channels?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Integrations and Alerting",
+    "expected_key_phrases": [
+      "Teams",
+      "webhook"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_096",
+    "question": "How long will NovaCloud v1 REST API remain active?",
+    "expected_document": "technova_product_guide.pdf",
+    "expected_section": "Deprecation and Versioning",
+    "expected_key_phrases": [
+      "31 December 2024"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_product_guide.pdf."
+  },
+  {
+    "id": "eval_097",
+    "question": "What is the minimum number of characters required for TechNova logins?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": [
+      "14 characters"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_098",
+    "question": "Which password manager is required by company security guidelines?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Password Policy",
+    "expected_key_phrases": [
+      "1Password"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_099",
+    "question": "Can I use SMS OTPs for my VPN login?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Multi-Factor Authentication",
+    "expected_key_phrases": [
+      "SMS",
+      "not accepted"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_100",
+    "question": "For how long can an engineer get temporary write privileges in production?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Access Control",
+    "expected_key_phrases": [
+      "eight hours",
+      "8 hours"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_101",
+    "question": "What version of Transport Layer Security is enforced for customer data?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": [
+      "TLS 1.2"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_102",
+    "question": "How is stored customer information encrypted at rest?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Data Encryption",
+    "expected_key_phrases": [
+      "AES-256"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_103",
+    "question": "How fast does an unattended company MacBook lock its display?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Device Security",
+    "expected_key_phrases": [
+      "five minutes",
+      "5 minutes"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_104",
+    "question": "How quickly must European authorities be notified of a customer data breach?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Incident Response",
+    "expected_key_phrases": [
+      "72 hours",
+      "GDPR"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_105",
+    "question": "Does TechNova possess an active SOC 2 Type II audit report?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Compliance and Certification",
+    "expected_key_phrases": [
+      "SOC 2 Type II"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_106",
+    "question": "What is the penalty if an employee clicks on a simulated phishing test?",
+    "expected_document": "technova_security_policy.docx",
+    "expected_section": "Security Training",
+    "expected_key_phrases": [
+      "refresher",
+      "not penalised"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_security_policy.docx."
+  },
+  {
+    "id": "eval_107",
+    "question": "Does the company pay for a Master's degree tuition in full?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "no information"
+    ],
+    "ground_truth_answer": "Answer grounded in external / unmentioned."
+  },
+  {
+    "id": "eval_108",
+    "question": "Are independent contractors eligible for paid parental leave?",
+    "expected_document": "technova_employee_handbook.pdf",
+    "expected_section": "Welcome to TechNova",
+    "expected_key_phrases": [
+      "Contractors",
+      "individual agreements"
+    ],
+    "ground_truth_answer": "Answer grounded in technova_employee_handbook.pdf."
+  },
+  {
+    "id": "eval_109",
+    "question": "Can employees bring emotional support animals to the Dublin office?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "does not contain"
+    ],
+    "ground_truth_answer": "Answer grounded in external / unmentioned."
+  },
+  {
+    "id": "eval_110",
+    "question": "How many stock units are granted to Senior Engineers on hire?",
+    "expected_document": null,
+    "expected_section": null,
+    "expected_key_phrases": [
+      "not",
+      "no information"
+    ],
+    "ground_truth_answer": "Answer grounded in external / unmentioned."
+  }
+]
