@@ -1,6 +1,7 @@
 import logging
 import streamlit as st
 import config
+from src.cache import clear as clear_query_cache, stats as cache_stats
 from src.indexing import (
     build_index,
     clear_index,
@@ -75,6 +76,13 @@ def render_sidebar() -> bool:
 
         st.caption(f"**Reranker:** {reranker_status()}")
 
+        # Cache stats
+        cs = cache_stats()
+        st.caption(
+            f"**Query Cache:** {cs['size']} entries · "
+            f"{cs['hits']} hits · {cs['misses']} misses"
+        )
+
         st.divider()
         render_document_management()
 
@@ -85,6 +93,10 @@ def render_sidebar() -> bool:
             clear_memory(st.session_state.memory)
             st.session_state.messages = []
             st.rerun()
+
+        if st.button("🗑️ Clear query cache", width="stretch", help="Wipe the in-memory answer cache"):
+            clear_query_cache()
+            st.success("Query cache cleared.")
 
         show_debug = st.toggle(
             "Show Retrieval Details",
@@ -128,6 +140,7 @@ def render_document_management() -> None:
 
     if st.button("🗑️ Clear / Rebuild", width="stretch"):
         clear_index()
+        clear_query_cache()          # Stale answers must not be served after a rebuild
         st.session_state.pipeline = None
         st.success("Index cleared. Click 'Build Vector DB' to start again.")
 
@@ -138,6 +151,7 @@ def run_build() -> None:
             documents = load_document_from_folder(config.DOCUMENTS_DIR)
             stats = build_index(documents)
 
+        clear_query_cache()          # New index → old cached answers are stale
         st.session_state.pipeline = None
         st.success(
             f"Indexed {stats['documents']} pages -> {stats['parents']} parent chunks "
@@ -153,6 +167,7 @@ def run_update() -> None:
             documents = load_document_from_folder(config.DOCUMENTS_DIR)
             stats = update_index(documents)
 
+        clear_query_cache()          # New documents may change answers to known questions
         st.session_state.pipeline = None
         if "added_children" in stats:
             st.success(
@@ -167,6 +182,11 @@ def run_update() -> None:
 
 def render_debug_panel(debug: dict) -> None:
     with st.expander("🔍 Retrieval details", expanded=False):
+
+        if debug.get("cache_hit"):
+            st.success("⚡ Served from query cache — no retrieval or LLM call needed.")
+            return
+
         st.markdown("**1. Original query**")
         st.write(debug["original_query"])
 
@@ -216,11 +236,7 @@ def render_sources(sources: list) -> None:
 def main() -> None:
     init_session_state()
 
-    st.title("📚 Advanced RAG Assistant")
-    st.caption(
-        "Hybrid retrieval · Multi-query · Parent-child chunks · "
-        "Cross-encoder reranking · Context refinement"
-    )
+    st.title("📚 NexusRAG")
 
     show_debug = render_sidebar()
 
@@ -238,7 +254,6 @@ def main() -> None:
         )
         return
 
-    
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
@@ -260,19 +275,23 @@ def main() -> None:
         return
 
     with st.chat_message("assistant"):
+        cache_hit = False
         with st.spinner("Searching documents and writing an answer..."):
             try:
                 result = answer_question(question, pipeline, st.session_state.memory)
+                cache_hit = result.get("debug", {}).get("cache_hit", False)
             except Exception as error:
                 st.error(f"Something went wrong: {error}")
                 return
+
+        if cache_hit:
+            st.caption("⚡ _Answered from cache_")
 
         st.markdown(result["answer"])
         render_sources(result["sources"])
         if show_debug:
             render_debug_panel(result["debug"])
 
-    
     add_exchange(st.session_state.memory, question, result["answer"])
     st.session_state.messages.append(
         {
