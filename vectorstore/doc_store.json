@@ -1,99 +1,93 @@
 {
   "parents": [
     {
-      "page_content": "Ankit Kumar Jha\n+91-8810475132 | ankit.aiml625@gmail.com | linkedin.com/in/ankit-kumar-jha-46a076310 | github.com/Ankitkumar1141 | New Delhi, India\nSummary\nAI & ML engineer with a B.Tech in Artificial Intelligence & Machine Learning who designed FinSight, a dual-retrieval (dense +\nBM25) RAG pipeline with cross-encoder reranking for financial document Q&A. Built LLM evaluation frameworks at Ethara AI and\nshipped 3+ end-to-end ML pipelines as a freelancer. Seeking an AI/LLM Engineer, Data Analyst and Data Scientist role to build and\nevaluate applied generative AI systems.\nEducation\nGuru Gobind Singh Indraprastha University New Delhi, India\nBachelor of Technology in Artificial Intelligence & Machine Learning; CGPA: 8.32 Oct 2022 \u2013 Jun 2026\n\u2022 Coursework: Machine Learning, Deep Learning, NLP, Data Structures & Algorithms, Probability & Statistics, Linear Algebra,\nOptimization Theory\nTechnical Skills\nLLM/GenAI: Generative AI, RAG (hybrid dense+BM25 retrieval, cross-encoder reranking, table-aware chunking), Hugging Face\nTransformers, LangChain, LangGraph, Prompt Engineering, Fine-tuning (LoRA/PEFT), GPT-4, LLaMA\nLanguages: Python, SQL, Java, C++\nSoftware Engineering: OOPs, LLD, SDLC\nCore ML: PyTorch, TensorFlow, Keras, Scikit-learn, Feature Engineering, Time-Series Forecasting (LSTM \u2013 StockAI), Bayesian\nInference, Convex Optimization, Information Theory\nDeployment: Docker, FastAPI, Streamlit, A WS (EC2, S3), GCP (Vertex AI), Git, CI/CD, REST APIs\nDatabases: MySQL, PostgreSQL, MongoDB, ChromaDB (dense vector search), rank-bm25 (sparse search, FinSight)",
+      "page_content": "Compliance Copilot: A Retrieval-Augmented Generation System for Regulatory Document Question Answering\n\nAnkit Kumar Jha\nIndependent Researcher\nIndia\nankit.aiml625@gmail.com\n\nAbstract - Compliance with regulatory frameworks such as the General Data Protection Regulation (GDPR), SOC 2, ISO/IEC 27001, and OWASP security guidelines is a critical challenge for organizations. Legal and engineering teams spend significant effort manually searching large volumes of compliance documentation to answer policy questions. This paper presents Compliance Copilot, a production-ready Retrieval-Augmented Generation (RAG) system designed to automate regulatory question answering with verifiable source citations and built-in safety guardrails. The system employs a multi-stage pipeline: a document ingestion pipeline; a hybrid retrieval strategy combining dense vector search (ChromaDB) and sparse keyword search (BM25) with LLM-driven query expansion; and a generation stage backed by a pluggable LLM factory (supporting Ollama, Groq, HuggingFace, and Mock providers). The system is deployed via Docker and Railway, exposing a FastAPI backend secured by Bearer Token authentication and an interactive Streamlit frontend with built-in analytics. Output quality is structured to be evaluated using the RAGAS framework, while runtime safety is enforced through prompt-injection detection and hallucination grounding checks. This paper contributes a reference architecture for compliance-domain RAG applications, detailing its components, guardrails, and observability stack.",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha"
       }
     },
     {
-      "page_content": "Databases: MySQL, PostgreSQL, MongoDB, ChromaDB (dense vector search), rank-bm25 (sparse search, FinSight)\nData Analysis: Excel, Power BI, Pandas, NumPy\nProjects\nFinSight | Python, RAG, Hugging Face, FastAPI, Streamlit, Docker 2026\n\u2022 Built a dual-retrieval RAG pipeline (dense + BM25) with cross-encoder reranking for financial document Q&A, with\ntable-aware chunking to preserve numeric context; improved Recall@5 from 68% to 81%.\n\u2022 Achieved 87% answer faithfulness on a 40-question evaluation set with source citations; containerized and deployed to Hugging\nFace Spaces via Docker.\nConversational RAG Assistant| LangChain, Mistral, ChromaDB, Streamlit 2026\n\u2022 Built a multi-turn conversational RAG chatbot with memory-aware query rewriting, extending FinSight\u2019s single-shot retrieval\nto handle follow-up questions and context carryover.\n\u2022 Implemented cosine-similarity vector search (ChromaDB) over 10K+ documents; measured hallucination rate at 14% vs. a\nvanilla-LLM baseline of 35% (50-question test set).\nChurn Modelling | Python, XGBoost, LightGBM, Optuna, FastAPI, Docker, MLflow Ongoing\n\u2022 Developing an end-to-end Customer Churn Prediction system on 10,000 bank customers by engineering a multi-sheet relational\npipeline (Demographic, Location, Account) with scikit-learn ColumnTransformer, benchmarking 8 ML algorithms (LR, RF,\nXGBoost, LightGBM, SVM, etc.) via Optuna-powered hyperparameter tuning, and deploying a real-time inference API\n(FastAPI) containerized with Docker.",
+      "page_content": "Index Terms - Retrieval-Augmented Generation, Regulatory Compliance, Natural Language Processing, Question Answering, Hybrid Retrieval, BM25, ChromaDB, LangChain, Guardrails\n\nI. INTRODUCTION\n\nThe landscape of digital compliance is growing more demanding each year. Enterprises operating under GDPR, SOC 2, ISO 27001, and OWASP must maintain up-to-date knowledge of extensive guidelines. A single misinterpretation of a policy can result in regulatory penalties or security breaches. Traditional solutions rely on manual searches through hundreds of pages of documents, which is slow and error-prone. While Large Language Models (LLMs) offer strong natural language understanding, they are prone to hallucination- making up answers when applied outside their training data.\n\nRetrieval-Augmented Generation (RAG) [1] bridges this gap by grounding LLM responses in retrieved, authoritative documents. However, implementing RAG for compliance faces challenges: (1) multi-document synthesis across different frameworks; (2) hallucination risks where LLMs inject unverified technical terms; (3) security vulnerabilities like prompt injection; and (4) the need for exact traceability (document, section, page).\n\nThis paper presents Compliance Copilot, an architectural implementation of a RAG system tailored for the compliance domain. Rather than presenting empirical data, this paper details the system\u2019s design, integration of technologies, and built-in mechanisms for safety, observability, and evaluation.\n\nII. RELATED WORK",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 1",
-        "section": "Projects"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION"
       }
     },
     {
-      "page_content": "XGBoost, LightGBM, SVM, etc.) via Optuna-powered hyperparameter tuning, and deploying a real-time inference API\n(FastAPI) containerized with Docker.\n\u2022 Enhancing model robustness on a 36% missing-value feature (Balance) through controlled experimentation (drop vs. median\nimputation vs. missing indicator), tracking all experiment metrics with MLflow, and structuring the project as a modular,\nproduction-grade codebase with automated scripts for data ingestion, preprocessing, training, and model registry.\nExperience\nLLM Intern Feb 2026 \u2013 Sept 2026\nEthara AI Gurugram, Haryana, India\n\u2022 Developed Python-based automation scripts for large-scale LLM output evaluation, reducing manual assessment time by 50%\nand enabling consistent scoring across 1,000+ prompt variations.\n\u2022 Designed structured evaluation frameworks with custom metrics (accuracy, coherence, hallucination rate), cutting new-model\nonboarding from 5 days to 2 days.\n\u2022 Benchmarked 5+ LLMs across production use cases, producing reports that directly informed the team\u2019s model-selection\ndecisions.\n\u2022 Developed and implemented multi-stage testing pipelines to identify and diagnose performance issues in LLM applications,\ndelivering technical reports that guided root cause analysis and resolution for stakeholders.\nF reelance F ull-Stack ML Engineer Jan 2025 \u2013 Jun 2026\nIndependent (part-time, alongside full-time coursework) Remote\n\u2022 Architected and delivered 3+ end-to-end ML pipelines (ingestion \u2192 feature engineering \u2192 training \u2192 deployment) across NLP,",
+      "page_content": "II. RELATED WORK\n\nRetrieval-Augmented Generation. Lewis et al.\u00a0[1] introduced RAG as a seq2seq architecture combining a dense retrieval model with a generator. LangChain [2] provides a widely-adopted framework for composing these components. This system builds on LangChain abstractions.\n\nHybrid Retrieval. Dense vector retrieval captures semantic meaning but may miss exact regulatory terms (e.g., \u2018Article 6\u2019). Sparse retrieval via BM25 [3] complements this by matching precise keywords. Ensemble retrieval combining both has been shown to outperform either method alone [4].\n\nQuery Expansion and Reranking. Multi-query expansion reformulates the original query to increase recall [5]. Reranking with cross-encoders [6] is a well-established pattern to refine candidate pools retrieved by faster, less precise methods.\n\nLLM Guardrails and Evaluation. Prompt injection attack patterns are a recognized vulnerability [7], while hallucination detection remains an active research area [8]. The RAGAS framework [9] provides metrics for automated evaluation of RAG pipelines.\n\nIII. SYSTEM ARCHITECTURE\n\nThe system is designed with scalability, privacy, and security as core tenets. It is organized into distinct layers: User Interface, Backend API, RAG Pipeline, and Data Layer.\n\n(Fig. 1. High-level architecture demonstrating the flow from user query to the FastAPI backend, through the RAG pipeline, and returning a grounded response.)\n\nA. Document Ingestion Pipeline",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 2",
-        "section": "Experience"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2",
+        "section": "II. RELATED WORK"
       }
     },
     {
-      "page_content": "Independent (part-time, alongside full-time coursework) Remote\n\u2022 Architected and delivered 3+ end-to-end ML pipelines (ingestion \u2192 feature engineering \u2192 training \u2192 deployment) across NLP,\nclassification, and time-series domains, achieving 85%+ accuracy on a customer-churn task, a 12-point lift over baseline (73%).\n\u2022 Deployed containerized ML services via Docker on A WS EC2 and GCP for 45+ daily active users; built the accompanying ETL\nlayer, and debugged service logs to identify and resolve operational issues.\n\u2022 Diagnosed and resolved API integration and deployment issues in deployed ML services, improving system stability for users.\n\u2022 Responded to client inquiries on ML pipeline performance and bugs, communicating solutions via email and documentation.\n\u2022 Authored technical documentation for deployed ML pipelines, including troubleshooting guides and API usage instructions.\n\u2022 Implemented advanced feature engineering (polynomial features, PCA, interaction terms) on 10K+ record datasets to improve\nmodel performance and reduce training time.\nCertifications & Achievements\n\u2022 Google Cloud ML Specialization(Vertex AI); Deep Learning & NLP Specializations(Coursera)\n\u2022 Active GitHub contributor\u2013 ML projects spanning RAG pipelines, evaluation frameworks, forecasting models",
+      "page_content": "(Fig. 1. High-level architecture demonstrating the flow from user query to the FastAPI backend, through the RAG pipeline, and returning a grounded response.)\n\nA. Document Ingestion Pipeline\n\nThe ingestion pipeline processes various regulatory sources (PDF, DOCX, MD, TXT) into searchable embeddings and keyword indices. Documents are parsed and chunked using a RecursiveCharacterTextSplitter with a chunk_size=1000 and overlap=200 to preserve regulatory clauses spanning boundaries. Each chunk is enriched with metadata, specifically the compliance category (e.g., GDPR, SOC2, ISO27001, OWASP), source filename, page number, and section. The system utilizes the sentence-transformers/all-MiniLM-L6-v2 embedding model [10] to convert text into vectors, which are stored locally in ChromaDB [11], alongside a BM25 index for keyword search.\n\nB. Hybrid Retrieval Pipeline\n\nTo address the semantic gap while maintaining exact keyword matches, the system implements a hybrid search strategy. A query expansion module first uses the LLM to expand a single user question into three related sub-questions. These queries are executed against both the ChromaDB database and the BM25 index.\n\n (Fig. 2. Retrieval strategy combining dense semantic (ChromaDB) and sparse keyword (BM25) results with query expansion and reranking.)\n\nThe results are merged and reranked using a CrossEncoder from the sentence-transformers library [10] to select the top 5 most relevant paragraphs.\n\nC. Mathematical Formulation of Retrieval",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 3",
-        "section": "Certifications & Achievements"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3",
+        "section": "A. Document Ingestion Pipeline"
+      }
+    },
+    {
+      "page_content": "The results are merged and reranked using a CrossEncoder from the sentence-transformers library [10] to select the top 5 most relevant paragraphs.\n\nC. Mathematical Formulation of Retrieval\n\nThe final retrieval score used prior to reranking is a weighted ensemble combination of dense semantic similarity and sparse keyword relevance. We define the hybrid score as:\n\nScore_hybrid(d, q) = 0.6 \u00d7 Score_dense(d, q) + 0.4 \u00d7 Score_BM25(d, q)\n\nwhere d is the document chunk and q is the query. This weighting reflects a priority on semantic matching while preserving keyword precision.\n\nThe dense score relies on cosine similarity between the query embedding q and document embedding d:\n\nScore_dense(d, q) = (q \u00b7 d) / (||q|| ||d||)\n\nD. Generation and LLM Factory\n\nThe \u201cAI brain\u201d reads the retrieved paragraphs to generate the final answer. The system employs a Factory Pattern supporting four LLM providers: 1. Ollama: Runs open-source models locally, ensuring 100% privacy for sensitive data. 2. Groq: A cloud API providing extremely high-speed inference. 3. HuggingFace: A cloud API for broad access to open-source models. 4. Mock: A simulated LLM that returns dummy answers for automated testing.\n\nIV. SECURITY, GUARDRAILS, AND OBSERVABILITY\n\nA. Safety Guardrails",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4",
+        "section": ""
+      }
+    },
+    {
+      "page_content": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY\n\nA. Safety Guardrails\n\nCompliance data requires strict constraints on AI behavior. The system implements a dual-layer guardrail architecture: Input Guardrail: Before AI processing, the user\u2019s question is scanned via regex patterns to block malicious hacking attempts and prompt injections. Output Guardrail: After generating a response, the system checks if the answer uses specific technical terms not found in the retrieved documents. If unverified terms are detected, a hallucination warning is appended.\n\nB. Authentication and Deployment\n\nThe backend logic is exposed via a FastAPI Rest application secured by Bearer Token Authentication. Deployment is containerized using Docker and Docker Compose. Cloud deployment is supported via Railway configurations.\n\nC. Frontend Interface\n\nBuilt using Streamlit, the UI provides interactive chat bubbles, an expandable source citations viewer, an analytics sidebar (displaying total queries and violations), a document upload panel, and policy compliance badges to visually indicate the safety of the response.\n\nD. Observability and Evaluation Framework\n\nLangSmith is integrated to trace operations, logging every step of the pipeline. Furthermore, the architecture is designed to support the RAGAS framework [9] to systematically measure answer quality across four dimensions: Faithfulness, Answer Relevance, Context Precision, and Context Recall.\n\nV. DISCUSSION AND LIMITATIONS\n\nA. Architectural Benefits",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY"
+      }
+    },
+    {
+      "page_content": "V. DISCUSSION AND LIMITATIONS\n\nA. Architectural Benefits\n\nThe separation of concerns between the Streamlit frontend and the FastAPI backend allows independent scaling. The hybrid retrieval strategy effectively balances the semantic understanding required to interpret vague user queries with the strict keyword matching necessary for legal citations.\n\nB. Limitations and Error Analysis\n\nSeveral limitations exist: 1. Regex-Based Input Filters: The input guardrail relies on pattern matching, which may be bypassed by novel prompt injection attacks. 2. Output Grounding Constraints: The output guardrail operates on exact keyword verification. Nuanced semantic hallucinations may bypass this filter. 3. Context Window Limits: Extracting only the top 5 paragraphs may not provide sufficient context for highly complex queries requiring synthesis across dozens of regulatory articles.\n\nVI. CONCLUSION AND FUTURE WORK\n\nThis paper detailed the architecture of Compliance Copilot, a system designed to address the challenges of regulatory document Q&A through hybrid retrieval, a pluggable LLM factory, and strict safety guardrails. By integrating local embedding capabilities, Docker-based deployment, and a Streamlit analytics dashboard, the system serves as a scalable template for enterprise compliance applications.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6",
+        "section": "V. DISCUSSION AND LIMITATIONS"
+      }
+    },
+    {
+      "page_content": "Future work will focus on empirical validation. This includes: (1) conducting large-scale quantitative evaluations using the RAGAS framework against a curated benchmark; (2) implementing Natural Language Inference (NLI) models for more robust output hallucination detection; and (3) expanding the ingestion pipeline to support multi-modal compliance documents containing complex tables and architectural diagrams.\n\nREFERENCES",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7",
+        "section": "REFERENCES"
+      }
+    },
+    {
+      "page_content": "REFERENCES\n\n[1] P. Lewis et al., \u201cRetrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,\u201d NeurIPS, vol.\u00a033, pp.\u00a09459-9474, 2020.\n[2] H. Chase, \u201cLangChain,\u201d [Online]. Available: https://github.com/langchain-ai/langchain.\n[3] S. E. Robertson and S. Walker, \u201cSome Simple Effective Approximations to the 2-Poisson Model for Probabilistic Weighted Retrieval,\u201d ACM SIGIR, pp.\u00a0232-241, 1994.\n[4] K. Al-Hazmi and A. Khatri, \u201cHybrid Retrieval for Open-Domain Question Answering,\u201d Information Processing & Management, vol.\u00a060, no. 3, 2023.\n[5] J. Ma et al., \u201cZero-Shot Neural Retrieval via Domain-Targeted Synthetic Query Generation,\u201d EMNLP, pp.\u00a01803-1812, 2021.\n[6] N. Nogueira and K. Cho, \u201cPassage Re-ranking with BERT,\u201d arXiv:1901.04085, 2019.\n[7] F. Perez and I. Ribeiro, \u201cIgnore Previous Prompt: Attack Techniques For Language Models,\u201d arXiv:2211.09527, 2022.\n[8] X. Guo et al., \u201cDetecting Hallucinations in Large Language Model Generation: A Survey,\u201d ACM Computing Surveys, vol.\u00a056, no. 9, 2024.\n[9] S. Es et al., \u201cRAGAS: Automated Evaluation of Retrieval Augmented Generation,\u201d EACL, pp.\u00a0150-163, 2024.\n[10] N. Reimers and I. Gurevych, \u201cSentence-BERT: Sentence Embeddings using Siamese BERT-Networks,\u201d EMNLP-IJCNLP, pp.\u00a03982-3992, 2019.\n[11] ChromaDB Contributors, \u201cChroma: The AI-native Open-Source Embedding Database,\u201d GitHub, 2023. [Online]. Available: https://github.com/chroma-core/chroma.\n[12] T. Zhang et al., \u201cSemantic Chunking Strategies for Retrieval-Augmented Generation,\u201d arXiv:2401.00368, 2024.\n\n\u00a9 2026 Ankit Kumar Jha. IEEE Format Research Paper. All rights reserved.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES"
       }
     },
     {
@@ -290,503 +284,531 @@
   ],
   "children": [
     {
-      "page_content": "Ankit Kumar Jha\n+91-8810475132 | ankit.aiml625@gmail.com | linkedin.com/in/ankit-kumar-jha-46a076310 | github.com/Ankitkumar1141 | New Delhi, India\nSummary\nAI & ML engineer with a B.Tech in Artificial Intelligence & Machine Learning who designed FinSight, a dual-retrieval (dense +",
+      "page_content": "Compliance Copilot: A Retrieval-Augmented Generation System for Regulatory Document Question Answering\n\nAnkit Kumar Jha\nIndependent Researcher\nIndia\nankit.aiml625@gmail.com",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha",
-        "chunk_id": "Ankit_Resume.pdf :: 0 :: 0"
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0 :: 0"
       }
     },
     {
-      "page_content": "BM25) RAG pipeline with cross-encoder reranking for financial document Q&A. Built LLM evaluation frameworks at Ethara AI and\nshipped 3+ end-to-end ML pipelines as a freelancer. Seeking an AI/LLM Engineer, Data Analyst and Data Scientist role to build and\nevaluate applied generative AI systems.\nEducation\nGuru Gobind Singh Indraprastha University New Delhi, India",
+      "page_content": "Abstract - Compliance with regulatory frameworks such as the General Data Protection Regulation (GDPR), SOC 2, ISO/IEC 27001, and OWASP security guidelines is a critical challenge for organizations. Legal and engineering teams spend significant effort manually searching large volumes of compliance documentation to answer policy questions",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha",
-        "chunk_id": "Ankit_Resume.pdf :: 0 :: 1"
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0 :: 1"
       }
     },
     {
-      "page_content": "Guru Gobind Singh Indraprastha University New Delhi, India\nBachelor of Technology in Artificial Intelligence & Machine Learning; CGPA: 8.32 Oct 2022 \u2013 Jun 2026\n\u2022 Coursework: Machine Learning, Deep Learning, NLP, Data Structures & Algorithms, Probability & Statistics, Linear Algebra,\nOptimization Theory\nTechnical Skills",
+      "page_content": ". This paper presents Compliance Copilot, a production-ready Retrieval-Augmented Generation (RAG) system designed to automate regulatory question answering with verifiable source citations and built-in safety guardrails",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha",
-        "chunk_id": "Ankit_Resume.pdf :: 0 :: 2"
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0 :: 2"
       }
     },
     {
-      "page_content": "Optimization Theory\nTechnical Skills\nLLM/GenAI: Generative AI, RAG (hybrid dense+BM25 retrieval, cross-encoder reranking, table-aware chunking), Hugging Face\nTransformers, LangChain, LangGraph, Prompt Engineering, Fine-tuning (LoRA/PEFT), GPT-4, LLaMA\nLanguages: Python, SQL, Java, C++\nSoftware Engineering: OOPs, LLD, SDLC",
+      "page_content": ". The system employs a multi-stage pipeline: a document ingestion pipeline; a hybrid retrieval strategy combining dense vector search (ChromaDB) and sparse keyword search (BM25) with LLM-driven query expansion; and a generation stage backed by a pluggable LLM factory (supporting Ollama, Groq, HuggingFace, and Mock providers)",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha",
-        "chunk_id": "Ankit_Resume.pdf :: 0 :: 3"
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0 :: 3"
       }
     },
     {
-      "page_content": "Software Engineering: OOPs, LLD, SDLC\nCore ML: PyTorch, TensorFlow, Keras, Scikit-learn, Feature Engineering, Time-Series Forecasting (LSTM \u2013 StockAI), Bayesian\nInference, Convex Optimization, Information Theory\nDeployment: Docker, FastAPI, Streamlit, A WS (EC2, S3), GCP (Vertex AI), Git, CI/CD, REST APIs",
+      "page_content": ". The system is deployed via Docker and Railway, exposing a FastAPI backend secured by Bearer Token authentication and an interactive Streamlit frontend with built-in analytics. Output quality is structured to be evaluated using the RAGAS framework, while runtime safety is enforced through prompt-injection detection and hallucination grounding checks",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha",
-        "chunk_id": "Ankit_Resume.pdf :: 0 :: 4"
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0 :: 4"
       }
     },
     {
-      "page_content": "Databases: MySQL, PostgreSQL, MongoDB, ChromaDB (dense vector search), rank-bm25 (sparse search, FinSight)",
+      "page_content": ". This paper contributes a reference architecture for compliance-domain RAG applications, detailing its components, guardrails, and observability stack.",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 0",
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0",
         "section": "Ankit Kumar Jha",
-        "chunk_id": "Ankit_Resume.pdf :: 0 :: 5"
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 0 :: 5"
       }
     },
     {
-      "page_content": "Databases: MySQL, PostgreSQL, MongoDB, ChromaDB (dense vector search), rank-bm25 (sparse search, FinSight)\nData Analysis: Excel, Power BI, Pandas, NumPy\nProjects\nFinSight | Python, RAG, Hugging Face, FastAPI, Streamlit, Docker 2026\n\u2022 Built a dual-retrieval RAG pipeline (dense + BM25) with cross-encoder reranking for financial document Q&A, with",
+      "page_content": "Index Terms - Retrieval-Augmented Generation, Regulatory Compliance, Natural Language Processing, Question Answering, Hybrid Retrieval, BM25, ChromaDB, LangChain, Guardrails\n\nI. INTRODUCTION",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 1",
-        "section": "Projects",
-        "chunk_id": "Ankit_Resume.pdf :: 1 :: 0"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1 :: 0"
       }
     },
     {
-      "page_content": "table-aware chunking to preserve numeric context; improved Recall@5 from 68% to 81%.\n\u2022 Achieved 87% answer faithfulness on a 40-question evaluation set with source citations; containerized and deployed to Hugging\nFace Spaces via Docker.\nConversational RAG Assistant| LangChain, Mistral, ChromaDB, Streamlit 2026",
+      "page_content": "The landscape of digital compliance is growing more demanding each year. Enterprises operating under GDPR, SOC 2, ISO 27001, and OWASP must maintain up-to-date knowledge of extensive guidelines. A single misinterpretation of a policy can result in regulatory penalties or security breaches",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 1",
-        "section": "Projects",
-        "chunk_id": "Ankit_Resume.pdf :: 1 :: 1"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1 :: 1"
       }
     },
     {
-      "page_content": "\u2022 Built a multi-turn conversational RAG chatbot with memory-aware query rewriting, extending FinSight\u2019s single-shot retrieval\nto handle follow-up questions and context carryover.\n\u2022 Implemented cosine-similarity vector search (ChromaDB) over 10K+ documents; measured hallucination rate at 14% vs. a\nvanilla-LLM baseline of 35% (50-question test set).",
+      "page_content": ". Traditional solutions rely on manual searches through hundreds of pages of documents, which is slow and error-prone. While Large Language Models (LLMs) offer strong natural language understanding, they are prone to hallucination- making up answers when applied outside their training data.",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 1",
-        "section": "Projects",
-        "chunk_id": "Ankit_Resume.pdf :: 1 :: 2"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1 :: 2"
       }
     },
     {
-      "page_content": "vanilla-LLM baseline of 35% (50-question test set).\nChurn Modelling | Python, XGBoost, LightGBM, Optuna, FastAPI, Docker, MLflow Ongoing\n\u2022 Developing an end-to-end Customer Churn Prediction system on 10,000 bank customers by engineering a multi-sheet relational\npipeline (Demographic, Location, Account) with scikit-learn ColumnTransformer, benchmarking 8 ML algorithms (LR, RF,",
+      "page_content": "Retrieval-Augmented Generation (RAG) [1] bridges this gap by grounding LLM responses in retrieved, authoritative documents",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 1",
-        "section": "Projects",
-        "chunk_id": "Ankit_Resume.pdf :: 1 :: 3"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1 :: 3"
       }
     },
     {
-      "page_content": "XGBoost, LightGBM, SVM, etc.) via Optuna-powered hyperparameter tuning, and deploying a real-time inference API\n(FastAPI) containerized with Docker.",
+      "page_content": ". However, implementing RAG for compliance faces challenges: (1) multi-document synthesis across different frameworks; (2) hallucination risks where LLMs inject unverified technical terms; (3) security vulnerabilities like prompt injection; and (4) the need for exact traceability (document, section, page).",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 1",
-        "section": "Projects",
-        "chunk_id": "Ankit_Resume.pdf :: 1 :: 4"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1 :: 4"
       }
     },
     {
-      "page_content": "XGBoost, LightGBM, SVM, etc.) via Optuna-powered hyperparameter tuning, and deploying a real-time inference API\n(FastAPI) containerized with Docker.\n\u2022 Enhancing model robustness on a 36% missing-value feature (Balance) through controlled experimentation (drop vs. median\nimputation vs. missing indicator), tracking all experiment metrics with MLflow, and structuring the project as a modular,",
+      "page_content": "This paper presents Compliance Copilot, an architectural implementation of a RAG system tailored for the compliance domain. Rather than presenting empirical data, this paper details the system\u2019s design, integration of technologies, and built-in mechanisms for safety, observability, and evaluation.\n\nII. RELATED WORK",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 2",
-        "section": "Experience",
-        "chunk_id": "Ankit_Resume.pdf :: 2 :: 0"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1",
+        "section": "I. INTRODUCTION",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 1 :: 5"
       }
     },
     {
-      "page_content": "production-grade codebase with automated scripts for data ingestion, preprocessing, training, and model registry.\nExperience\nLLM Intern Feb 2026 \u2013 Sept 2026\nEthara AI Gurugram, Haryana, India\n\u2022 Developed Python-based automation scripts for large-scale LLM output evaluation, reducing manual assessment time by 50%\nand enabling consistent scoring across 1,000+ prompt variations.",
+      "page_content": "II. RELATED WORK\n\nRetrieval-Augmented Generation. Lewis et al.\u00a0[1] introduced RAG as a seq2seq architecture combining a dense retrieval model with a generator. LangChain [2] provides a widely-adopted framework for composing these components. This system builds on LangChain abstractions.",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 2",
-        "section": "Experience",
-        "chunk_id": "Ankit_Resume.pdf :: 2 :: 1"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2",
+        "section": "II. RELATED WORK",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2 :: 0"
       }
     },
     {
-      "page_content": "\u2022 Designed structured evaluation frameworks with custom metrics (accuracy, coherence, hallucination rate), cutting new-model\nonboarding from 5 days to 2 days.\n\u2022 Benchmarked 5+ LLMs across production use cases, producing reports that directly informed the team\u2019s model-selection\ndecisions.",
+      "page_content": "Hybrid Retrieval. Dense vector retrieval captures semantic meaning but may miss exact regulatory terms (e.g., \u2018Article 6\u2019). Sparse retrieval via BM25 [3] complements this by matching precise keywords. Ensemble retrieval combining both has been shown to outperform either method alone [4].",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 2",
-        "section": "Experience",
-        "chunk_id": "Ankit_Resume.pdf :: 2 :: 2"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2",
+        "section": "II. RELATED WORK",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2 :: 1"
       }
     },
     {
-      "page_content": "decisions.\n\u2022 Developed and implemented multi-stage testing pipelines to identify and diagnose performance issues in LLM applications,\ndelivering technical reports that guided root cause analysis and resolution for stakeholders.\nF reelance F ull-Stack ML Engineer Jan 2025 \u2013 Jun 2026\nIndependent (part-time, alongside full-time coursework) Remote",
+      "page_content": "Query Expansion and Reranking. Multi-query expansion reformulates the original query to increase recall [5]. Reranking with cross-encoders [6] is a well-established pattern to refine candidate pools retrieved by faster, less precise methods.",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 2",
-        "section": "Experience",
-        "chunk_id": "Ankit_Resume.pdf :: 2 :: 3"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2",
+        "section": "II. RELATED WORK",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2 :: 2"
       }
     },
     {
-      "page_content": "\u2022 Architected and delivered 3+ end-to-end ML pipelines (ingestion \u2192 feature engineering \u2192 training \u2192 deployment) across NLP,",
+      "page_content": "LLM Guardrails and Evaluation. Prompt injection attack patterns are a recognized vulnerability [7], while hallucination detection remains an active research area [8]. The RAGAS framework [9] provides metrics for automated evaluation of RAG pipelines.\n\nIII. SYSTEM ARCHITECTURE",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 2",
-        "section": "Experience",
-        "chunk_id": "Ankit_Resume.pdf :: 2 :: 4"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2",
+        "section": "II. RELATED WORK",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2 :: 3"
       }
     },
     {
-      "page_content": "Independent (part-time, alongside full-time coursework) Remote\n\u2022 Architected and delivered 3+ end-to-end ML pipelines (ingestion \u2192 feature engineering \u2192 training \u2192 deployment) across NLP,\nclassification, and time-series domains, achieving 85%+ accuracy on a customer-churn task, a 12-point lift over baseline (73%).",
+      "page_content": "III. SYSTEM ARCHITECTURE\n\nThe system is designed with scalability, privacy, and security as core tenets. It is organized into distinct layers: User Interface, Backend API, RAG Pipeline, and Data Layer.\n\n(Fig. 1. High-level architecture demonstrating the flow from user query to the FastAPI backend, through the RAG pipeline, and returning a grounded response.)\n\nA. Document Ingestion Pipeline",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 3",
-        "section": "Certifications & Achievements",
-        "chunk_id": "Ankit_Resume.pdf :: 3 :: 0"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2",
+        "section": "II. RELATED WORK",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 2 :: 4"
       }
     },
     {
-      "page_content": "\u2022 Deployed containerized ML services via Docker on A WS EC2 and GCP for 45+ daily active users; built the accompanying ETL\nlayer, and debugged service logs to identify and resolve operational issues.\n\u2022 Diagnosed and resolved API integration and deployment issues in deployed ML services, improving system stability for users.",
+      "page_content": "(Fig. 1. High-level architecture demonstrating the flow from user query to the FastAPI backend, through the RAG pipeline, and returning a grounded response.)\n\nA. Document Ingestion Pipeline",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 3",
-        "section": "Certifications & Achievements",
-        "chunk_id": "Ankit_Resume.pdf :: 3 :: 1"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3",
+        "section": "A. Document Ingestion Pipeline",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3 :: 0"
       }
     },
     {
-      "page_content": "\u2022 Responded to client inquiries on ML pipeline performance and bugs, communicating solutions via email and documentation.\n\u2022 Authored technical documentation for deployed ML pipelines, including troubleshooting guides and API usage instructions.\n\u2022 Implemented advanced feature engineering (polynomial features, PCA, interaction terms) on 10K+ record datasets to improve",
+      "page_content": "The ingestion pipeline processes various regulatory sources (PDF, DOCX, MD, TXT) into searchable embeddings and keyword indices. Documents are parsed and chunked using a RecursiveCharacterTextSplitter with a chunk_size=1000 and overlap=200 to preserve regulatory clauses spanning boundaries",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 3",
-        "section": "Certifications & Achievements",
-        "chunk_id": "Ankit_Resume.pdf :: 3 :: 2"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3",
+        "section": "A. Document Ingestion Pipeline",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3 :: 1"
       }
     },
     {
-      "page_content": "model performance and reduce training time.\nCertifications & Achievements\n\u2022 Google Cloud ML Specialization(Vertex AI); Deep Learning & NLP Specializations(Coursera)\n\u2022 Active GitHub contributor\u2013 ML projects spanning RAG pipelines, evaluation frameworks, forecasting models",
+      "page_content": ". Each chunk is enriched with metadata, specifically the compliance category (e.g., GDPR, SOC2, ISO27001, OWASP), source filename, page number, and section. The system utilizes the sentence-transformers/all-MiniLM-L6-v2 embedding model [10] to convert text into vectors, which are stored locally in ChromaDB [11], alongside a BM25 index for keyword search.",
       "metadata": {
-        "producer": "pdfTeX-1.40.25",
-        "creator": "LaTeX with hyperref",
-        "creationdate": "2026-10-21T14:01:24+00:00",
-        "author": "",
-        "title": "",
-        "subject": "",
-        "keywords": "",
-        "moddate": "2026-10-21T14:01:24+00:00",
-        "trapped": "/False",
-        "ptex.fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) kpathsea version 6.3.5",
-        "source": "D:\\NexusRAG\\data\\documents\\Ankit_Resume.pdf",
-        "total_pages": 1,
-        "page": 0,
-        "page_label": "1",
-        "filename": "Ankit_Resume.pdf",
-        "doc_type": "pdf",
-        "page_number": 1,
-        "parent_id": "Ankit_Resume.pdf :: 3",
-        "section": "Certifications & Achievements",
-        "chunk_id": "Ankit_Resume.pdf :: 3 :: 3"
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3",
+        "section": "A. Document Ingestion Pipeline",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3 :: 2"
+      }
+    },
+    {
+      "page_content": "B. Hybrid Retrieval Pipeline\n\nTo address the semantic gap while maintaining exact keyword matches, the system implements a hybrid search strategy. A query expansion module first uses the LLM to expand a single user question into three related sub-questions. These queries are executed against both the ChromaDB database and the BM25 index.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3",
+        "section": "A. Document Ingestion Pipeline",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3 :: 3"
+      }
+    },
+    {
+      "page_content": "(Fig. 2. Retrieval strategy combining dense semantic (ChromaDB) and sparse keyword (BM25) results with query expansion and reranking.)\n\nThe results are merged and reranked using a CrossEncoder from the sentence-transformers library [10] to select the top 5 most relevant paragraphs.\n\nC. Mathematical Formulation of Retrieval",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3",
+        "section": "A. Document Ingestion Pipeline",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 3 :: 4"
+      }
+    },
+    {
+      "page_content": "The results are merged and reranked using a CrossEncoder from the sentence-transformers library [10] to select the top 5 most relevant paragraphs.\n\nC. Mathematical Formulation of Retrieval\n\nThe final retrieval score used prior to reranking is a weighted ensemble combination of dense semantic similarity and sparse keyword relevance. We define the hybrid score as:",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4",
+        "section": "",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4 :: 0"
+      }
+    },
+    {
+      "page_content": "Score_hybrid(d, q) = 0.6 \u00d7 Score_dense(d, q) + 0.4 \u00d7 Score_BM25(d, q)\n\nwhere d is the document chunk and q is the query. This weighting reflects a priority on semantic matching while preserving keyword precision.\n\nThe dense score relies on cosine similarity between the query embedding q and document embedding d:\n\nScore_dense(d, q) = (q \u00b7 d) / (||q|| ||d||)\n\nD. Generation and LLM Factory",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4",
+        "section": "",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4 :: 1"
+      }
+    },
+    {
+      "page_content": "The \u201cAI brain\u201d reads the retrieved paragraphs to generate the final answer. The system employs a Factory Pattern supporting four LLM providers: 1. Ollama: Runs open-source models locally, ensuring 100% privacy for sensitive data. 2. Groq: A cloud API providing extremely high-speed inference. 3. HuggingFace: A cloud API for broad access to open-source models. 4",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4",
+        "section": "",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4 :: 2"
+      }
+    },
+    {
+      "page_content": ". 4. Mock: A simulated LLM that returns dummy answers for automated testing.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4",
+        "section": "",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4 :: 3"
+      }
+    },
+    {
+      "page_content": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY\n\nA. Safety Guardrails",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4",
+        "section": "",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 4 :: 4"
+      }
+    },
+    {
+      "page_content": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY\n\nA. Safety Guardrails",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5 :: 0"
+      }
+    },
+    {
+      "page_content": "Compliance data requires strict constraints on AI behavior. The system implements a dual-layer guardrail architecture: Input Guardrail: Before AI processing, the user\u2019s question is scanned via regex patterns to block malicious hacking attempts and prompt injections",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5 :: 1"
+      }
+    },
+    {
+      "page_content": ". Output Guardrail: After generating a response, the system checks if the answer uses specific technical terms not found in the retrieved documents. If unverified terms are detected, a hallucination warning is appended.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5 :: 2"
+      }
+    },
+    {
+      "page_content": "B. Authentication and Deployment\n\nThe backend logic is exposed via a FastAPI Rest application secured by Bearer Token Authentication. Deployment is containerized using Docker and Docker Compose. Cloud deployment is supported via Railway configurations.\n\nC. Frontend Interface",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5 :: 3"
+      }
+    },
+    {
+      "page_content": "C. Frontend Interface\n\nBuilt using Streamlit, the UI provides interactive chat bubbles, an expandable source citations viewer, an analytics sidebar (displaying total queries and violations), a document upload panel, and policy compliance badges to visually indicate the safety of the response.\n\nD. Observability and Evaluation Framework",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5 :: 4"
+      }
+    },
+    {
+      "page_content": "D. Observability and Evaluation Framework\n\nLangSmith is integrated to trace operations, logging every step of the pipeline. Furthermore, the architecture is designed to support the RAGAS framework [9] to systematically measure answer quality across four dimensions: Faithfulness, Answer Relevance, Context Precision, and Context Recall.\n\nV. DISCUSSION AND LIMITATIONS\n\nA. Architectural Benefits",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5",
+        "section": "IV. SECURITY, GUARDRAILS, AND OBSERVABILITY",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 5 :: 5"
+      }
+    },
+    {
+      "page_content": "V. DISCUSSION AND LIMITATIONS\n\nA. Architectural Benefits\n\nThe separation of concerns between the Streamlit frontend and the FastAPI backend allows independent scaling. The hybrid retrieval strategy effectively balances the semantic understanding required to interpret vague user queries with the strict keyword matching necessary for legal citations.\n\nB. Limitations and Error Analysis",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6",
+        "section": "V. DISCUSSION AND LIMITATIONS",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6 :: 0"
+      }
+    },
+    {
+      "page_content": "Several limitations exist: 1. Regex-Based Input Filters: The input guardrail relies on pattern matching, which may be bypassed by novel prompt injection attacks. 2. Output Grounding Constraints: The output guardrail operates on exact keyword verification. Nuanced semantic hallucinations may bypass this filter. 3",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6",
+        "section": "V. DISCUSSION AND LIMITATIONS",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6 :: 1"
+      }
+    },
+    {
+      "page_content": ". Nuanced semantic hallucinations may bypass this filter. 3. Context Window Limits: Extracting only the top 5 paragraphs may not provide sufficient context for highly complex queries requiring synthesis across dozens of regulatory articles.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6",
+        "section": "V. DISCUSSION AND LIMITATIONS",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6 :: 2"
+      }
+    },
+    {
+      "page_content": "VI. CONCLUSION AND FUTURE WORK",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6",
+        "section": "V. DISCUSSION AND LIMITATIONS",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6 :: 3"
+      }
+    },
+    {
+      "page_content": "This paper detailed the architecture of Compliance Copilot, a system designed to address the challenges of regulatory document Q&A through hybrid retrieval, a pluggable LLM factory, and strict safety guardrails. By integrating local embedding capabilities, Docker-based deployment, and a Streamlit analytics dashboard, the system serves as a scalable template for enterprise compliance applications.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6",
+        "section": "V. DISCUSSION AND LIMITATIONS",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 6 :: 4"
+      }
+    },
+    {
+      "page_content": "Future work will focus on empirical validation",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7 :: 0"
+      }
+    },
+    {
+      "page_content": ". This includes: (1) conducting large-scale quantitative evaluations using the RAGAS framework against a curated benchmark; (2) implementing Natural Language Inference (NLI) models for more robust output hallucination detection; and (3) expanding the ingestion pipeline to support multi-modal compliance documents containing complex tables and architectural diagrams.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7 :: 1"
+      }
+    },
+    {
+      "page_content": "REFERENCES",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 7 :: 2"
+      }
+    },
+    {
+      "page_content": "REFERENCES",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 0"
+      }
+    },
+    {
+      "page_content": "[1] P. Lewis et al., \u201cRetrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,\u201d NeurIPS, vol.\u00a033, pp.\u00a09459-9474, 2020.\n[2] H. Chase, \u201cLangChain,\u201d [Online]. Available: https://github.com/langchain-ai/langchain.\n[3] S. E. Robertson and S. Walker, \u201cSome Simple Effective Approximations to the 2-Poisson Model for Probabilistic Weighted Retrieval,\u201d ACM SIGIR, pp.\u00a0232-241, 1994.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 1"
+      }
+    },
+    {
+      "page_content": "[4] K. Al-Hazmi and A. Khatri, \u201cHybrid Retrieval for Open-Domain Question Answering,\u201d Information Processing & Management, vol.\u00a060, no. 3, 2023.\n[5] J. Ma et al., \u201cZero-Shot Neural Retrieval via Domain-Targeted Synthetic Query Generation,\u201d EMNLP, pp.\u00a01803-1812, 2021.\n[6] N. Nogueira and K. Cho, \u201cPassage Re-ranking with BERT,\u201d arXiv:1901.04085, 2019.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 2"
+      }
+    },
+    {
+      "page_content": "[7] F. Perez and I. Ribeiro, \u201cIgnore Previous Prompt: Attack Techniques For Language Models,\u201d arXiv:2211.09527, 2022.\n[8] X. Guo et al., \u201cDetecting Hallucinations in Large Language Model Generation: A Survey,\u201d ACM Computing Surveys, vol.\u00a056, no. 9, 2024.\n[9] S. Es et al., \u201cRAGAS: Automated Evaluation of Retrieval Augmented Generation,\u201d EACL, pp.\u00a0150-163, 2024.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 3"
+      }
+    },
+    {
+      "page_content": "[10] N. Reimers and I. Gurevych, \u201cSentence-BERT: Sentence Embeddings using Siamese BERT-Networks,\u201d EMNLP-IJCNLP, pp.\u00a03982-3992, 2019.\n[11] ChromaDB Contributors, \u201cChroma: The AI-native Open-Source Embedding Database,\u201d GitHub, 2023. [Online]. Available: https://github.com/chroma-core/chroma.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 4"
+      }
+    },
+    {
+      "page_content": "[12] T. Zhang et al., \u201cSemantic Chunking Strategies for Retrieval-Augmented Generation,\u201d arXiv:2401.00368, 2024.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 5"
+      }
+    },
+    {
+      "page_content": "\u00a9 2026 Ankit Kumar Jha. IEEE Format Research Paper. All rights reserved.",
+      "metadata": {
+        "source": "D:\\NexusRAG\\data\\documents\\Compliance_Copilot_IEEE_Paper_V4.docx",
+        "filename": "Compliance_Copilot_IEEE_Paper_V4.docx",
+        "doc_type": "docx",
+        "parent_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8",
+        "section": "REFERENCES",
+        "chunk_id": "Compliance_Copilot_IEEE_Paper_V4.docx :: 8 :: 6"
       }
     },
     {
