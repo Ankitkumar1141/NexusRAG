@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: nexusrag
+    runtime: python
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: VECTOR_DB
+        value: faiss
+      - key: MISTRAL_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: MISTRAL_CHAT_MODEL
+        value: mistral-small-latest
+      - key: GEMINI_EMBEDDING_MODEL
+        value: models/embedding-001
+

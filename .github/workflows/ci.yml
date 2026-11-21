@@ -10,6 +10,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      PYTHONPATH: .
+      MISTRAL_API_KEY: ci_dummy_mistral_key
+      GEMINI_API_KEY: ci_dummy_gemini_key
+      VECTOR_DB: faiss
+      MISTRAL_CHAT_MODEL: mistral-small-latest
+      GEMINI_EMBEDDING_MODEL: models/embedding-001
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -24,9 +32,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest
 
     - name: Run unit test suite
       run: |
-        pytest tests/ -v
-
+        python -m pytest tests/ -v
