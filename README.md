@@ -1,20 +1,9 @@
----
-title: NexusRAG Enterprise Assistant
-emoji: 📚
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-sdk_version: 1.50.0
-app_file: app.py
-pinned: false
-license: mit
----
-
 # NexusRAG 📚
 
 > **Production-Grade Enterprise Retrieval-Augmented Generation Engine**  
 > *Hierarchical (Parent-Child) Chunking · Hybrid Search (Dense + BM25) · Parallel Retrieval · Reciprocal Rank Fusion · Cross-Encoder Reranking · In-Memory Semantic Cache · Automated 110-Case Evaluation Benchmarks*
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://nexusrag-knyh.onrender.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-v0.3+-1C3C3C?style=flat)](https://langchain.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-v1.50+-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io)
@@ -22,6 +11,8 @@ license: mit
 [![Tests](https://img.shields.io/badge/Tests-pytest-green?style=flat&logo=pytest&logoColor=white)](tests/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker&logoColor=white)](https://docker.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](LICENSE)
+
+🌐 **Live Application:** [https://nexusrag-knyh.onrender.com/](https://nexusrag-knyh.onrender.com/)
 
 ---
 
@@ -168,7 +159,7 @@ NexusRAG/
 ### 1. Clone & Set Up Environment
 
 ```bash
-git clone https://github.com/your-username/NexusRAG.git
+git clone https://github.com/Ankitkumar1141/NexusRAG.git
 cd NexusRAG
 
 # Create virtual environment
@@ -252,16 +243,42 @@ Results and per-query logs are exported to `data/evaluation/eval_results.json`.
 
 ---
 
-## 🐳 Docker Deployment
+## 🚀 Deployment
 
-You can run the entire system inside a self-contained Docker container:
+### 1. Render Web Service (Live Production)
 
-### Build Image
+NexusRAG is deployed as a live cloud service on **Render**:
+
+* 🌐 **Live Demo URL:** [https://nexusrag-knyh.onrender.com/](https://nexusrag-knyh.onrender.com/)
+* **Infrastructure:** Render Web Service (`render.yaml` Blueprint)
+* **Start Command:** `streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true`
+* **Configuration:** Headless production mode via `.streamlit/config.toml` with dynamic port binding.
+
+#### Deploy Your Own on Render:
+1. Fork or push this repository to GitHub.
+2. In the [Render Dashboard](https://dashboard.render.com/), create a new **Web Service** and connect this repository.
+3. Configure the environment variables in Render:
+   * `MISTRAL_API_KEY`: Your Mistral AI API key
+   * `GEMINI_API_KEY`: Your Google Gemini API key
+   * `VECTOR_DB`: `faiss`
+4. Set Build Command to `pip install -r requirements.txt` and Start Command to:
+   ```bash
+   streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+   ```
+5. Click **Deploy**.
+
+---
+
+### 2. Docker Deployment
+
+You can run the entire system locally or on any cloud server inside a self-contained Docker container:
+
+#### Build Image
 ```bash
 docker build -t nexusrag:latest .
 ```
 
-### Run Container
+#### Run Container
 ```bash
 # Run with local volume persistence for uploaded data and indices
 docker run -p 8501:8501 \
