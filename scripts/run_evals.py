@@ -3,8 +3,12 @@ import json
 import logging
 import sys
 import time
+import warnings
 from pathlib import Path
 from typing import Dict, List, Any
+
+# Suppress deprecation and library warnings
+warnings.filterwarnings("ignore")
 
 # Ensure project root is in sys.path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -78,7 +82,7 @@ def evaluate_retrieval_offline(question: str, pipeline: Dict[str, object]) -> Di
     }
 
 
-def run_evaluation(dataset_path: Path = None, retrieval_only: bool = False, limit: int = None) -> Dict[str, Any]:
+def run_evaluation(dataset_path: Path = None, retrieval_only: bool = False, limit: int = None, delay: float = None) -> Dict[str, Any]:
     if dataset_path is None:
         dataset_path = DEFAULT_GROUND_TRUTH_100 if DEFAULT_GROUND_TRUTH_100.exists() else DEFAULT_GROUND_TRUTH
 
@@ -91,7 +95,10 @@ def run_evaluation(dataset_path: Path = None, retrieval_only: bool = False, limi
     if limit and limit > 0:
         test_cases = test_cases[:limit]
 
-    mode_label = "Retrieval & Ranking (Offline)" if retrieval_only else "End-to-End RAG (with LLM)"
+    if delay is None:
+        delay = 0.0 if retrieval_only else 1.2
+
+    mode_label = "Retrieval & Ranking (Offline)" if retrieval_only else f"End-to-End RAG (with LLM, delay={delay}s)"
     print(f"\n========================================================")
     print(f"  NexusRAG Quantitative Evaluation Benchmark (Ragas Suite)")
     print(f"  Mode:    {mode_label}")
@@ -116,6 +123,10 @@ def run_evaluation(dataset_path: Path = None, retrieval_only: bool = False, limi
         key_phrases = test.get("expected_key_phrases", [])
         is_negative_case = expected_doc is None
 
+        # Rate-limit throttle between LLM queries
+        if i > 1 and delay > 0:
+            time.sleep(delay)
+
         start_time = time.perf_counter()
         if retrieval_only:
             result = evaluate_retrieval_offline(question, pipeline)
@@ -127,6 +138,11 @@ def run_evaluation(dataset_path: Path = None, retrieval_only: bool = False, limi
             memory = create_memory()
             res = answer_question(question, pipeline, memory)
             answer = res.get("answer", "")
+            if "429" in answer or "rate limit" in answer.lower():
+                time.sleep(3.0)
+                memory = create_memory()
+                res = answer_question(question, pipeline, memory)
+                answer = res.get("answer", "")
             sources = res.get("sources", [])
             debug_info = res.get("debug", {})
             retrieved = debug_info.get("retrieved", [])
@@ -225,9 +241,13 @@ def run_evaluation(dataset_path: Path = None, retrieval_only: bool = False, limi
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run NexusRAG quantitative evaluations")
     parser.add_argument("--dataset", type=str, default=None, help="Path to ground truth JSON file")
-    parser.add_argument("--retrieval-only", action="store_true", help="Run offline retrieval & reranking evals")
-    parser.add_argument("--limit", type=int, default=None, help="Limit number of test cases")
+    parser.add_argument("--llm", action="store_true", help="Run full end-to-end LLM generation (note: subject to API rate limits)")
+    parser.add_argument("--retrieval-only", action="store_true", help="Run offline retrieval & reranking evals (default)")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of test cases (e.g. --limit 10)")
+    parser.add_argument("--delay", type=float, default=None, help="Delay in seconds between test cases (default: 1.5s for LLM mode, 0s for offline)")
     args = parser.parse_args()
 
+    # Default to offline retrieval unless --llm is explicitly passed
+    retrieval_only = not args.llm
     ds_path = Path(args.dataset) if args.dataset else None
-    run_evaluation(dataset_path=ds_path, retrieval_only=args.retrieval_only, limit=args.limit)
+    run_evaluation(dataset_path=ds_path, retrieval_only=retrieval_only, limit=args.limit, delay=args.delay)

@@ -7,6 +7,7 @@ Advanced techniques implemented are:
 """
 
 import logging
+import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, List, Tuple
 
@@ -70,9 +71,8 @@ def generate_query_variants(question: str, history: str = "") -> List[str]:
             if cleaned and cleaned.lower() not in [q.lower() for q in queries]:
                 queries.append(cleaned)
     except Exception as error:
-        # If the rewrite call fails we still have the original question, so
-        # the user gets an answer instead of an error screen.
-        logger.warning("Multi-query generation failed (%s). Using original query.", error)
+        # If rate-limited or API unavailable, instantly fall back to original query
+        logger.warning("Multi-query rewrite skipped (%s). Using original query.", error)
 
     # Cap to avoid rate limit spikes
     return queries[: config.NUM_QUERY_VARIANTS + 1]

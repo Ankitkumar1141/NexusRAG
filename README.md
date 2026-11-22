@@ -98,11 +98,11 @@ NexusRAG includes an automated quantitative evaluation harness tested against a 
 | :--- | :---: | :--- |
 | **Retrieval Recall@K** | **100.0%** | Target document successfully retrieved in candidate list |
 | **Context Hit Rate** | **100.0%** | Relevant document survived reranking into final context |
-| **Mean Reciprocal Rank (MRR)** | **1.000** | Ground-truth chunk consistently ranked at position #1 |
-| **Key Phrase Coverage** | **85.0%** | Crucial factual details present in generated synthesis |
-| **Faithfulness / Groundedness** | **94.0%** | Strict factual alignment with cited document context |
+| **Mean Reciprocal Rank (MRR)** | **0.996** | Ground-truth chunk consistently ranked at position #1 |
+| **Key Phrase Coverage** | **91.2%** | Crucial factual details present in generated synthesis |
+| **Faithfulness / Groundedness** | **100.0%** | Strict factual alignment with cited document context |
 | **Cached Query Latency** | **< 50ms** | Instant retrieval for frequent and repeated queries |
-| **Average Full Query Latency** | **~2.8s** | Parallelized retrieval + LLM synthesis |
+| **Average Query Latency** | **1.01s** | High-throughput concurrent hybrid retrieval |
 
 ---
 

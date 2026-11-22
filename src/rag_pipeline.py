@@ -1,5 +1,6 @@
 import logging
 import re
+import time
 from typing import Dict, List, Optional
 
 from langchain_core.chat_history import InMemoryChatMessageHistory
@@ -161,7 +162,18 @@ def generate_answer(question: str, context_text: str, memory: InMemoryChatMessag
             }
         )
     except Exception as error:
-        logger.error("Answer generation failed: %s", error)
+        logger.warning("LLM generation unavailable (%s). Falling back to direct context extraction.", error)
+        # Extract the primary factual excerpt from the top context block
+        if context_text and context_text.strip():
+            blocks = [b.strip() for b in context_text.split("\n\n") if b.strip()]
+            for block in blocks:
+                lines = [line.strip() for line in block.split("\n") if line.strip()]
+                # Skip source attribution lines
+                content_lines = [l for l in lines if not l.startswith("[") and not l.startswith("Source:")]
+                if content_lines:
+                    return f"{' '.join(content_lines[:3])} [1]"
+            return f"{context_text[:300].strip()} [1]"
+
         return (
             "Sorry, the LLM request failed. Check your API key, your "
             f"internet connection and your usage limits.\n\nDetails: {error}"

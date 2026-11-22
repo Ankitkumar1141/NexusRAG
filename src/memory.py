@@ -1,6 +1,4 @@
 import warnings
-warnings.filterwarnings("ignore")
-
 from typing import List
 
 from langchain_core.chat_history import InMemoryChatMessageHistory
@@ -10,7 +8,9 @@ import config
 
 
 def create_memory() -> InMemoryChatMessageHistory:
-    return InMemoryChatMessageHistory()
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        return InMemoryChatMessageHistory()
 
 
 def add_exchange(memory: InMemoryChatMessageHistory,question: str,answer: str,) -> None:
